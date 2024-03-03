@@ -1,0 +1,231 @@
+:root {
+}
+
+::-webkit-scrollbar {
+    width: 10px;
+}
+
+::-webkit-scrollbar-thumb {
+    cursor: default;
+    background-color: #74b1be;
+}
+
+@font-face {
+    font-family: 'MPLUS';
+    src: url('../font/MPLUS1p-Medium.woff') format('woff'), url('../font/MPLUS1p-Bold.woff') format('woff'), url('../font/MPLUS1p-Light.woff') format('woff');
+}
+
+* {
+    box-sizing: border-box;
+}
+
+ul, li, p, main, body, main, header, h1, h2 {
+    font-weight: normal;
+    line-height: 1;
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+
+body {
+    display: flex;
+    flex-direction: column;
+    font-family: 'MPLUS';
+    height: 100vh;
+    background-color: #2f3241;
+}
+
+main {
+    overflow: auto;
+    width: 100%;
+    border-top-left-radius: 2px;
+    padding: 20px 15px;
+    background-color: #fff;
+    scrollbar-gutter: stable;
+}
+
+header {
+    flex-shrink: 0;
+    width: 100%;
+    height: 30px;
+    background-color: #2f3241;
+    position: fixed;
+    top: 0;
+    -webkit-app-region: drag;
+}
+
+textarea {
+    resize: none;
+    display: block;
+    font-size: 14px;
+    font-weight: bold;
+    font-family: 'MPLUS';
+    width: 100%;
+    border-radius: 6px;
+    border: none;
+    padding: 16px;
+    background-color: #ebebeb;
+    scrollbar-gutter: stable;
+}
+
+input[type="text"] {
+    font-size: 14px;
+    font-weight: bold;
+    font-family: 'MPLUS';
+    border: 0;
+    padding: 8px 16px;
+    border-radius: 6px;
+    background-color: #ebebeb;
+}
+
+textarea:focus,
+input[type="text"] {
+    outline: none;
+}
+
+.hidden {
+    display: none !important;
+}
+
+.btn {
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    color: #fff;
+    padding: 6px 30px;
+    border-radius: 4px;
+    background-color: #74b1be;
+}
+
+.content {
+    overflow: hidden;
+    display: flex;
+    height: 100%;
+    margin-top: 30px;
+}
+
+.sidebar {
+    flex-shrink: 0;
+    width: 90px;
+    height: 100%;
+}
+
+.sidebar__menu {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.sidebar__item {
+    cursor: pointer;
+    width: 60px;
+    height: 60px;
+    margin-top: 16px;
+    border-radius: 15px;
+    background-color: #fff;
+}
+
+.sidebar__item--current {
+    position: relative;
+}
+
+.sidebar__item--current::before {
+    content: '';
+    width: 4px;
+    height: 30px;
+    top: 50%;
+    right: -9px;
+    border-radius: 5px;
+    transform: translateY(-50%);
+    background-color: #fff;
+    position: absolute;
+}
+
+.home {
+    display: flex;
+    flex-direction: column;
+}
+
+.description {
+    margin-bottom: 64px;
+}
+
+.description h1 {
+    margin-bottom: 16px;
+}
+
+.description p {
+    line-height: 1.5;
+}
+
+.typeChoice li {
+    display: flex;
+    margin-bottom: 32px;
+}
+
+.typeChoice li:last-of-type {
+    margin-bottom: 0;
+}
+
+.typeChoice .btn {
+    width: 240px;
+    height: 40px;
+    margin-left: auto;
+}
+
+.baseInput,
+.needLogin {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    height: 100%;
+}
+
+.baseInput__description,
+.baseInput__description h2 {
+    margin-bottom: 16px;
+}
+
+.needLogin__description,
+.needLogin__description h2 {
+    margin-bottom: 16px;
+}
+
+.baseInput__container,
+.needLogin__container {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 16px;
+}
+
+.baseInput__container input {
+    margin-bottom: 10px;
+}
+
+.baseInput__container input:last-of-type {
+    margin-bottom: 0;
+}
+
+.inputUrl {
+    height: 100%;
+    min-height: 80px;
+    border-radius: 6px;
+    background-color: #ebebeb;
+    position: relative;
+}
+
+.inputUrl textarea {
+    height: calc(100% - 28px - 8px);
+    border-radius: 0;
+}
+
+.inputUrl .btn {
+    width: 120px;
+    position: absolute;
+    right: 8px;
+    bottom: 8px;
+}
+
+

@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="ja">
+    <head>
+        <title>アクセシビリティ診断 v1</title>
+        <link rel="stylesheet" href="../src/css/main.css">
+    </head>
+    <body>
+        <header></header>
+        <div class="content">
+            <div class="sidebar">
+                <ul class="sidebar__menu">
+                    <li class="sidebar__item sidebar__item--current" data-menu-target="home"></li>
+                    <li class="sidebar__item" data-menu-target="result"></li>
+                    <li class="sidebar__item" data-menu-target="setting"></li>
+                </ul>
+            </div>
+            <main>
+                <div class="home hidden">
+                    <div class="description">
+                        <h1>検証</h1>
+                        <p>検証するページのタイプを選択してください。</p>
+                        <p>ベーシック認証はURL入力画面で設定可能です。</p>
+                    </div>
+                    <div class="typeChoice">
+                        <ul>
+                            <li>
+                                <!-- ログインがないページはこちら -->
+                                <p>ログインがないページはこちら</p>
+                                <div class="btn" data-type-choice="baseInput">入力画面に進む</div>
+                            </li>
+                            <li>
+                                <!-- ログインが必要なページはこちら -->
+                                <p>ログインが必要なページはこちら</p>
+                                <div class="btn" data-type-choice="needLogin">入力画面に進む</div>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="baseInput hidden" data-type-choice="baseInput">
+                    <div>
+                        <div class="baseInput__description">
+                            <h2>URL入力画面</h2>
+                            <p>basic認証がかかっている場合は、IDとパスワードを入力してください</p>
+                        </div>
+                        <div class="baseInput__container">
+                            <input type="text" placeholder="ID" autocomplete="off">
+                            <input type="text" placeholder="Pass" autocomplete="off">
+                        </div>
+                    </div>
+                    <div class="baseInput__description">
+                        <p>URLを1行ずつ入手してください</p>
+                    </div>
+                    <div class="inputUrl">
+                        <textarea autocomplete="off" spellcheck="false" placeholder="1行ずつURLを入力してください"></textarea>
+                        <div class="btn">開始</div>
+                    </div>
+                </div>
+                <div class="needLogin" data-type-choice="needLogin">
+                    <div class="needLogin__container">
+                        <div class="needLogin__description">
+                            <h2>URL入力画面</h2>
+                            <p>basic認証がかかっている場合は、IDとパスワードを入力してください</p>
+                        </div>
+                        <input type="text" placeholder="ログインページのURL" autocomplete="off">
+                    </div>
+                    <div class="baseInput__description">
+                        <p>URLを1行ずつ入手してください</p>
+                    </div>
+                    <div class="inputUrl">
+                        <textarea autocomplete="off" spellcheck="false" placeholder="1行ずつURLを入力してください"></textarea>
+                        <div class="btn">開始</div>
+                    </div>
+                </div>
+            </main>
+        </div>
+    </body>
+</html>
