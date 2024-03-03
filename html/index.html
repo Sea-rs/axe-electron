@@ -3,6 +3,7 @@
     <head>
         <title>アクセシビリティ診断 v1</title>
         <link rel="stylesheet" href="../src/css/main.css">
+        <script src="../src/js/renderer.js"></script>
     </head>
     <body>
         <header></header>
@@ -15,7 +16,7 @@
                 </ul>
             </div>
             <main>
-                <div class="home hidden">
+                <div class="home js-inputContainer">
                     <div class="description">
                         <h1>検証</h1>
                         <p>検証するページのタイプを選択してください。</p>
@@ -25,7 +26,7 @@
                         <ul>
                             <li>
                                 <!-- ログインがないページはこちら -->
-                                <p>ログインがないページはこちら</p>
+                                <p>通常ページはこちら</p>
                                 <div class="btn" data-type-choice="baseInput">入力画面に進む</div>
                             </li>
                             <li>
@@ -36,15 +37,15 @@
                         </ul>
                     </div>
                 </div>
-                <div class="baseInput hidden" data-type-choice="baseInput">
+                <div class="baseInput js-inputContainer hidden" data-type-choice="baseInput">
                     <div>
                         <div class="baseInput__description">
                             <h2>URL入力画面</h2>
                             <p>basic認証がかかっている場合は、IDとパスワードを入力してください</p>
                         </div>
                         <div class="baseInput__container">
-                            <input type="text" placeholder="ID" autocomplete="off">
-                            <input type="text" placeholder="Pass" autocomplete="off">
+                            <input class="js-input--ID" type="text" placeholder="ID" autocomplete="off">
+                            <input class="js-input--Pass" type="password" placeholder="Pass" autocomplete="off">
                         </div>
                     </div>
                     <div class="baseInput__description">
@@ -52,14 +53,24 @@
                     </div>
                     <div class="inputUrl">
                         <textarea autocomplete="off" spellcheck="false" placeholder="1行ずつURLを入力してください"></textarea>
-                        <div class="btn">開始</div>
+                        <div class="btn__container">
+                            <div class="btn btn--primary js-btn--back">戻る</div>
+                            <div class="btn js-btn--start">開始</div>
+                        </div>
                     </div>
                 </div>
-                <div class="needLogin" data-type-choice="needLogin">
+                <div class="needLogin js-inputContainer hidden" data-type-choice="needLogin">
                     <div class="needLogin__container">
                         <div class="needLogin__description">
                             <h2>URL入力画面</h2>
                             <p>basic認証がかかっている場合は、IDとパスワードを入力してください</p>
+                        </div>
+                        <div class="baseInput__container">
+                            <input class="js-input--ID" type="text" placeholder="ID" autocomplete="off">
+                            <input class="js-input--Pass" type="password" placeholder="Pass" autocomplete="off">
+                        </div>
+                        <div class="needLogin__description">
+                            <p>ログインページのURLを入力してください</p>
                         </div>
                         <input type="text" placeholder="ログインページのURL" autocomplete="off">
                     </div>
@@ -68,7 +79,10 @@
                     </div>
                     <div class="inputUrl">
                         <textarea autocomplete="off" spellcheck="false" placeholder="1行ずつURLを入力してください"></textarea>
-                        <div class="btn">開始</div>
+                        <div class="btn__container">
+                            <div class="btn btn--primary js-btn--back">戻る</div>
+                            <div class="btn js-btn--start">開始</div>
+                        </div>
                     </div>
                 </div>
             </main>

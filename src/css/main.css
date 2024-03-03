@@ -68,7 +68,8 @@ textarea {
     scrollbar-gutter: stable;
 }
 
-input[type="text"] {
+input[type="text"],
+input[type="password"] {
     font-size: 14px;
     font-weight: bold;
     font-family: 'MPLUS';
@@ -79,7 +80,8 @@ input[type="text"] {
 }
 
 textarea:focus,
-input[type="text"] {
+input[type="text"],
+input[type="password"] {
     outline: none;
 }
 
@@ -97,6 +99,11 @@ input[type="text"] {
     padding: 6px 30px;
     border-radius: 4px;
     background-color: #74b1be;
+}
+
+.btn--primary {
+    color: #2f3241;
+    background-color: #fff;
 }
 
 .content {
@@ -221,11 +228,18 @@ input[type="text"] {
     border-radius: 0;
 }
 
-.inputUrl .btn {
-    width: 120px;
+.inputUrl .btn__container {
+    display: flex;
+    /* width: 120px; */
     position: absolute;
     right: 8px;
     bottom: 8px;
 }
 
+.btn__container .btn {
+    margin-right: 8px;
+}
 
+.btn__container .btn:last-of-type {
+    margin-right: 0;
+}
