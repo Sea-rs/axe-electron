@@ -4,5 +4,14 @@
     },
     "LOGIN_URL_EMPTY": {
         "msg": "ログインが必要なページの場合はログインページのURLを入力してください"
+    },
+    "HTTP_STATUS_ERROR": {
+        "msg": "ページにアクセスできませんでした。遷移先が正しいか確認してください。",
+        "status": 0,
+        "url": ""
+    },
+    "AXE_PUPPETEER_ERROR": {
+        "msg": "axePuppeteerでエラーが発生しました。",
+        "rawError": ""
     }
 }

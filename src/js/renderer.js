@@ -45,12 +45,12 @@ function axeBaseStart() {
     startBtn.addEventListener('click', async () => {
         let basicID = document.querySelector('.baseInput .js-input--ID').value;
         let basicPass = document.querySelector('.baseInput .js-input--Pass').value;
-        let URLList = document.querySelector('.baseInput .inputUrl textarea').value;
+        let urlList = document.querySelector('.baseInput .inputUrl textarea').value;
 
         let dataObj = {
             'basicID': basicID,
             'basicPass': basicPass,
-            'URLList': URLList,
+            'urlList': urlList,
         };
 
         console.log(dataObj);
