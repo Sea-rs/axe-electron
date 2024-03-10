@@ -31,6 +31,7 @@ body {
     display: flex;
     flex-direction: column;
     font-family: 'MPLUS';
+    font-size: 12px;
     height: 100vh;
     background-color: #2f3241;
 }
@@ -58,12 +59,12 @@ textarea {
     resize: none;
     display: block;
     font-size: 14px;
-    font-weight: bold;
     font-family: 'MPLUS';
     width: 100%;
     border-radius: 6px;
     border: none;
-    padding: 16px;
+    margin: 16px 0 32px 0;
+    padding: 0 16px;
     background-color: #ebebeb;
     scrollbar-gutter: stable;
 }
@@ -71,7 +72,6 @@ textarea {
 input[type="text"],
 input[type="password"] {
     font-size: 14px;
-    font-weight: bold;
     font-family: 'MPLUS';
     border: 0;
     padding: 8px 16px;
@@ -87,6 +87,18 @@ input[type="password"] {
 
 .hidden {
     display: none !important;
+}
+
+.js-loading {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: fixed;
+    top: 30px;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    background-color: #ffffffaa;
 }
 
 .btn {

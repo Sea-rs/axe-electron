@@ -24,7 +24,8 @@ const createWindow = () => {
         },
         webPreferences: {
             preload: path.join(__dirname, '/src/js/preload.js')
-        }
+        },
+        backgroundColor: '#2f3241'
     });
 
     win.loadFile('html/index.html');
@@ -56,12 +57,13 @@ ipcMain.handle('transferredData', async (event, data) => {
         return axeInstance.getErrorList;
     }
 
-    return axeInstance.getAxeResult;
+    return axeInstance.getResult;
 });
 
 class axe {
     constructor(transferredData) {
         this.axeResult = [];
+        this.accessResult = [];
         this.errorList = [];
         this.basicID = transferredData.basicID;
         this.basicPass = transferredData.basicPass;
@@ -88,44 +90,101 @@ class axe {
         let page = await browser.newPage();
 
         await page.setBypassCSP(true);
+        await page.authenticate({
+            username: this.basicID,
+            password: this.basicPass
+        });
 
         // ログインが必要な場合
-
         if (this.isNeedLogin) {
             // ログインするために入力モードで起動する
+            let loginBrowser = await puppeteer.launch({headless: false});
+            let loginPage = await loginBrowser.newPage();
 
-            // let cookies = await page.cookies();
+            await loginPage.evaluateOnNewDocument(() => {
+                window.addEventListener('DOMContentLoaded', () => {
+                    let header = document.createElement('div');
+                    let btn = document.createElement('div');
 
-            // console.log(cookies);
-            // let newBrowser = await puppeteer.launch();
-            // let newPage = await newBrowser.newPage();
+                    header.classList.add('axeElectron-UI');
+                    btn.classList.add('btn');
+                    btn.textContent = '検証開始';
 
-            // await newPage.goto('https://qiita.com/');
-            // await newPage.setCookie(...cookies);
+                    header.appendChild(btn);
+                    document.body.appendChild(header);
 
-            // console.log(await newPage.cookies());
+                    let css = `
+                    .axeElectron-UI {
+                        display: flex;
+                        align-items: center;
+                        justify-content: end;
+                        width: 100%;
+                        height: 60px;
+                        border-bottom: 1px solid #ddd;
+                        position: absolute;
+                        top: 0;
+                        left: 0;
+                        background-color: #fff;
+                    }
+                    
+                    .axeElectron-UI > .btn {
+                        cursor: pointer;
+                        display: flex;
+                        align-items: center;
+                        justify-content: center;
+                        text-align: center;
+                        color: #fff;
+                        margin-right: 10px;
+                        padding: 6px 30px;
+                        border-radius: 4px;
+                        background-color: #74b1be;
+                    }
+                    `;
 
-            // newPage.close();
-            // newBrowser.close();
+                    let styleElement = document.createElement('style');
+                    styleElement.textContent = css;
+
+                    document.body.appendChild(styleElement);
+
+                    document.querySelector('.axeElectron-UI > .btn').addEventListener('click', () => {
+                        eval('window.axeUIDone();');
+                    });
+                });
+            });
+
+            await loginPage.goto(this.loginURL, {waitUntil: ['load', 'networkidle0']});
+
+            let cookies = await this.waitForOperation(loginPage);
+
+            loginPage.close();
+            loginBrowser.close();
+
+            await page.goto(this.login, {waitUntil: ['load', 'networkidle0']});
+            await page.setCookie(...cookies);
         }
 
         for (let i = 0; i < this.urlList.length; i++) {
-            let response = await page.goto(this.urlList[i], {
-                'waitUntil': ['load', 'networkidle0']
-            });
+            let response = await page.goto(this.urlList[i], {waitUntil: ['load', 'networkidle0']});
 
             let status = response.status();
 
             if (status >= 400) {
-                let errorObj = ERROR_MSG.HTTP_STATUS_ERROR;
-
-                errorObj.status = status;
-                errorObj.url = page.url();
-
-                this.errorList.push(errorObj);
+                this.accessResult.push({
+                    url: this.urlList[i],
+                    axeURL: page.url(),
+                    status: status
+                });
 
                 continue;
             }
+
+            await this.axePuppeteer(page);
+
+            this.accessResult.push({
+                url: this.urlList[i],
+                axeURL: page.url(),
+                status: status
+            });
 
             // await this.axePuppeteer(page);
         }
@@ -145,11 +204,25 @@ class axe {
         }
     }
 
+    async waitForOperation(page) {
+        return new Promise(async resolve => {
+            await page.exposeFunction('axeUIDone', async () => {
+                resolve(await page.cookies());
+            });
+
+            await page.evaluate(() => {
+                document.querySelector('.axeElectron-UI > .btn').addEventListener('click', () => {
+                    eval('window.axeUIDone();');
+                });
+            });
+        });
+    }
+
     get getErrorList() {
         return this.errorList;
     }
 
-    get getAxeResult() {
+    get getResult() {
         return this.axeResult;
     }
 }

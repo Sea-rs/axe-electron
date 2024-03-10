@@ -36,15 +36,9 @@ function init() {
     });
 
     // 通常ページのアクセシビリティ診断開始
-    axeBaseStart();
-}
-
-function axeBaseStart() {
-    let startBtn = document.querySelector('.baseInput .js-btn--start');
-
-    startBtn.addEventListener('click', async () => {
+    document.querySelector('.baseInput .js-btn--start').addEventListener('click', async () => {
         let basicID = document.querySelector('.baseInput .js-input--ID').value;
-        let basicPass = document.querySelector('.baseInput .js-input--Pass').value;
+        let basicPass = document.querySelector('.baseInput .js-input--pass').value;
         let urlList = document.querySelector('.baseInput .inputUrl textarea').value;
 
         let dataObj = {
@@ -53,7 +47,43 @@ function axeBaseStart() {
             'urlList': urlList,
         };
 
-        console.log(dataObj);
+        document.querySelector('.js-loading').classList.remove('hidden');
+
         console.log(await window.ipcApp.transferredData(dataObj));
+
+        showResult();
+
+        document.querySelector('.js-loading').classList.add('hidden');
     });
+
+    // ログインが必要なページのアクセシビリティ診断開始
+    document.querySelector('.needLogin .js-btn--start').addEventListener('click', async () => {
+        let basicID = document.querySelector('.needLogin .js-input--ID').value;
+        let basicPass = document.querySelector('.needLogin .js-input--pass').value;
+        let loginURL = document.querySelector('.needLogin .js-input--loginURL').value;
+        let urlList = document.querySelector('.needLogin .inputUrl textarea').value;
+
+        let dataObj = {
+            'basicID': basicID,
+            'basicPass': basicPass,
+            'loginURL': loginURL,
+            'urlList': urlList,
+        };
+
+        document.querySelector('.js-loading').classList.remove('hidden');
+
+        console.log(await window.ipcApp.transferredData(dataObj));
+
+        showResult();
+
+        document.querySelector('.js-loading').classList.add('hidden');
+    });
+}
+
+function showResult() {
+    document.querySelectorAll('main div[data-menu-target]').forEach(node => {
+        node.classList.add('hidden');
+    });
+
+    document.querySelector('main div[data-menu-target="result"]').classList.remove('hidden');
 }
