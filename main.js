@@ -43,7 +43,15 @@ app.on('window-all-closed', () => {
 });
 
 ipcMain.handle('transferredData', async (event, data) => {
-    let axeInstance = new axe(data);
+    let axeInstance;
+
+    if (data.manualMode) {
+        // マニュアルモードの場合
+        axeInstance = new axeManual(data);
+    } else {
+        // 自動モードの場合
+        axeInstance = new axe(data);
+    }
 
     await axeInstance.validation();
 
@@ -62,27 +70,25 @@ ipcMain.handle('transferredData', async (event, data) => {
 
 class axe {
     constructor(transferredData) {
-        this.axeResult = [];
-        this.accessResult = [];
+        this.axeResultPC = [];
+        this.axeResultSP = [];
+        this.accessResultPC = [];
+        this.accessResultSP = [];
         this.errorList = [];
         this.basicID = transferredData.basicID;
         this.basicPass = transferredData.basicPass;
-        this.loginURL = transferredData.loginURL;
 
         this.urlList = removeWhitespace(transferredData.urlList).split('\n');
         this.urlList = this.urlList.filter(url => url !== '');
 
-        this.isNeedLogin = this.loginURL === undefined ? false : true;
+        this.axeTags = [
+            'wcag2a'
+        ];
     }
 
     async validation() {
         // urlリストが空の場合
         this.urlList.length !== 0 || this.errorList.push(ERROR_MSG.URL_LIST_EMPTY);
-
-        // ログインURLが必要だけど、空だった場合
-        if (this.loginURL !== undefined) {
-            removeWhitespace(this.loginURL) !== '' || this.errorList.push(ERROR_MSG.LOGIN_URL_EMPTY);
-        }
     }
 
     async startAxe() {
@@ -95,81 +101,16 @@ class axe {
             password: this.basicPass
         });
 
-        // ログインが必要な場合
-        if (this.isNeedLogin) {
-            // ログインするために入力モードで起動する
-            let loginBrowser = await puppeteer.launch({headless: false});
-            let loginPage = await loginBrowser.newPage();
-
-            await loginPage.evaluateOnNewDocument(() => {
-                window.addEventListener('DOMContentLoaded', () => {
-                    let header = document.createElement('div');
-                    let btn = document.createElement('div');
-
-                    header.classList.add('axeElectron-UI');
-                    btn.classList.add('btn');
-                    btn.textContent = '検証開始';
-
-                    header.appendChild(btn);
-                    document.body.appendChild(header);
-
-                    let css = `
-                    .axeElectron-UI {
-                        display: flex;
-                        align-items: center;
-                        justify-content: end;
-                        width: 100%;
-                        height: 60px;
-                        border-bottom: 1px solid #ddd;
-                        position: absolute;
-                        top: 0;
-                        left: 0;
-                        background-color: #fff;
-                    }
-                    
-                    .axeElectron-UI > .btn {
-                        cursor: pointer;
-                        display: flex;
-                        align-items: center;
-                        justify-content: center;
-                        text-align: center;
-                        color: #fff;
-                        margin-right: 10px;
-                        padding: 6px 30px;
-                        border-radius: 4px;
-                        background-color: #74b1be;
-                    }
-                    `;
-
-                    let styleElement = document.createElement('style');
-                    styleElement.textContent = css;
-
-                    document.body.appendChild(styleElement);
-
-                    document.querySelector('.axeElectron-UI > .btn').addEventListener('click', () => {
-                        eval('window.axeUIDone();');
-                    });
-                });
-            });
-
-            await loginPage.goto(this.loginURL, {waitUntil: ['load', 'networkidle0']});
-
-            let cookies = await this.waitForOperation(loginPage);
-
-            loginPage.close();
-            loginBrowser.close();
-
-            await page.goto(this.login, {waitUntil: ['load', 'networkidle0']});
-            await page.setCookie(...cookies);
-        }
-
         for (let i = 0; i < this.urlList.length; i++) {
             let response = await page.goto(this.urlList[i], {waitUntil: ['load', 'networkidle0']});
+
+            // sp/pcで分ける
+            // viewportで設定する
 
             let status = response.status();
 
             if (status >= 400) {
-                this.accessResult.push({
+                this.accessResultPC.push({
                     url: this.urlList[i],
                     axeURL: page.url(),
                     status: status
@@ -180,13 +121,11 @@ class axe {
 
             await this.axePuppeteer(page);
 
-            this.accessResult.push({
+            this.accessResultPC.push({
                 url: this.urlList[i],
                 axeURL: page.url(),
                 status: status
             });
-
-            // await this.axePuppeteer(page);
         }
 
         page.close();
@@ -195,7 +134,7 @@ class axe {
 
     async axePuppeteer(page) {
         try {
-            this.axeResult.push(await new AxePuppeteer(page).analyze());
+            this.axeResultPC.push(await new AxePuppeteer(page).configure(CONFIG).withTags(this.axeTags).analyze());
         } catch(error) {
             let errorObj = ERROR_MSG.AXE_PUPPETEER_ERROR;
             errorObj.rawError = error;
@@ -223,7 +162,136 @@ class axe {
     }
 
     get getResult() {
-        return this.axeResult;
+        return this.axeResultPC;
+    }
+}
+
+// todo loginが必要かの判定処理いれる
+class axeManual extends axe {
+    async startAxe() {
+        let browser = await puppeteer.launch({headless: false});
+        let page = await browser.newPage();
+
+        await page.setBypassCSP(true);
+        await page.authenticate({
+            username: this.basicID,
+            password: this.basicPass
+        });
+
+        await page.evaluateOnNewDocument(() => {
+            window.addEventListener('DOMContentLoaded', () => {
+                let header = document.createElement('div');
+                let btnAxe = document.createElement('div');
+                let btnClose = document.createElement('div');
+
+                header.classList.add('axeElectron-UI');
+                btnAxe.classList.add('btn');
+                btnClose.classList.add('btn');
+
+                btnAxe.textContent = '検証開始';
+                btnClose.textContent = '終了';
+
+                header.appendChild(btnAxe);
+                header.appendChild(btnClose);
+
+                document.body.appendChild(header);
+                document.body.setAttribute('data-axeElectron-bodyFixed', '')
+
+                let css = `
+                .axeElectron-UI {
+                    display: flex;
+                    align-items: center;
+                    justify-content: end;
+                    width: 100%;
+                    height: 60px;
+                    border-bottom: 1px solid #ddd;
+                    position: absolute;
+                    top: 0;
+                    left: 0;
+                    background-color: #fff;
+                }
+                .axeElectron-UI > .btn {
+                    cursor: pointer;
+                    display: flex;
+                    align-items: center;
+                    justify-content: center;
+                    text-align: center;
+                    color: #fff;
+                    margin-right: 10px;
+                    padding: 6px 30px;
+                    border-radius: 4px;
+                    background-color: #74b1be;
+                }
+                .axeElectron-UI > .btn__start {
+                    background-color: red;
+                }
+                .axeElectron-UI > .btn__close {
+                    background-color: white;
+                }
+                body[data-axeElectron-bodyFixed] {
+                    margin-top: 60px !important;
+                }
+                `;
+
+                let styleElement = document.createElement('style');
+                styleElement.textContent = css;
+
+                document.body.appendChild(styleElement);
+
+                document.querySelector('.axeElectron-UI > .btn').addEventListener('click', () => {
+                    eval('window.axeUIDone();');
+                });
+            });
+        });
+
+        // ログインが必要な場合
+        if (this.isNeedLogin) {
+            // ログインするために入力モードで起動する
+            let loginBrowser = await puppeteer.launch({headless: false});
+            let loginPage = await loginBrowser.newPage();
+
+            
+
+            await loginPage.goto(this.loginURL, {waitUntil: ['load', 'networkidle0']});
+
+            let cookies = await this.waitForOperation(loginPage);
+
+            loginPage.close();
+            loginBrowser.close();
+
+            await page.goto(this.loginURL, {waitUntil: ['load', 'networkidle0']});
+            await page.setCookie(...cookies);
+        }
+
+        for (let i = 0; i < this.urlList.length; i++) {
+            let response = await page.goto(this.urlList[i], {waitUntil: ['load', 'networkidle0']});
+
+            // sp/pcで分ける
+            // viewportで設定する
+
+            let status = response.status();
+
+            if (status >= 400) {
+                this.accessResultPC.push({
+                    url: this.urlList[i],
+                    axeURL: page.url(),
+                    status: status
+                });
+
+                continue;
+            }
+
+            await this.axePuppeteer(page);
+
+            this.accessResultPC.push({
+                url: this.urlList[i],
+                axeURL: page.url(),
+                status: status
+            });
+        }
+
+        page.close();
+        browser.close();
     }
 }
 

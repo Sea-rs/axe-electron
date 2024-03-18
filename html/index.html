@@ -30,11 +30,11 @@
                                     <p>通常ページはこちら</p>
                                     <div class="btn" data-type-choice="baseInput">入力画面に進む</div>
                                 </li>
-                                <li>
-                                    <!-- ログインが必要なページはこちら -->
+                                <!-- ログインが必要なページはこちら -->
+                                <!-- <li>
                                     <p>ログインが必要なページはこちら</p>
                                     <div class="btn" data-type-choice="needLogin">入力画面に進む</div>
-                                </li>
+                                </li> -->
                             </ul>
                         </div>
                     </div>
@@ -62,7 +62,7 @@
                         </div>
                     </div>
     
-                    <div class="needLogin js-inputContainer hidden" data-type-choice="needLogin">
+                    <!-- <div class="needLogin js-inputContainer hidden" data-type-choice="needLogin">
                         <div class="needLogin__container">
                             <div class="needLogin__description">
                                 <h2>URL入力画面</h2>
@@ -87,15 +87,18 @@
                                 <div class="btn js-btn--start">開始</div>
                             </div>
                         </div>
-                    </div>
+                    </div> -->
                 </div>
 
                 <div data-menu-target="result" class="hidden">
                     <div class="js-resultContainer">
-                        <!-- SP/PCはタブ切り替え -->
                         <!-- CSVファイルは一括DLできるようにする -->
                         <!-- 日時 -->
                         <!-- 画面幅 -->
+                        <div class="result__header">
+                            <div class="btn">結果をダウンロードする</div>
+                        </div>
+                        <div class="result__summary"></div>
                     </div>
                 </div>
             </main>
