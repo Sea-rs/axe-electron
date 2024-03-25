@@ -3,6 +3,8 @@ document.addEventListener('DOMContentLoaded', () => {
 });
 
 function init() {
+    let rawData = [];
+
     // ログインページの有無によって入力欄を分けるため、そのボタンに関する処理の実装
     let typeChoiceBtn = document.querySelectorAll('.typeChoice .btn');
 
@@ -50,9 +52,7 @@ function init() {
 
         document.querySelector('.js-loading').classList.remove('hidden');
 
-        let rawData = await window.ipcApp.transferredData(dataObj);
-
-        console.log(rawData);
+        rawData = await window.ipcApp.transferredData(dataObj);
 
         showResult(rawData);
 
@@ -83,6 +83,45 @@ function init() {
         document.querySelector('.js-loading').classList.add('hidden');
     });
     */
+
+    document.getElementById('result__DLBtn').addEventListener('click', () => {
+        let formattedData = formatData(rawData);
+
+        let csv = formattedData.reduce((acc, cur) => {
+            // let currentData = '';
+
+            // for (let data in cur) {
+            //     let text = cur[data];
+
+            //     if (data == 'description' || data == 'failureSummary') {
+            //         text = '"' + cur[data] + '"';
+            //     }
+
+            //     currentData += ',' + text;
+            // }
+
+            // return acc + '\n' + currentData;
+
+            let row = '';
+
+            for (let header in cur) {
+                // selectorであれば配列扱いをする
+                if (header === 'selector') {
+                    row += ',' + cur[header][0];
+                } else if (/\n/.test(cur[header])) {
+                    row += ',' + '"' + cur[header] + '"';
+                } else if (/,/.test(cur[header])) {
+                    row += ',' + '"' + cur[header] + '"';
+                } else {
+                    row += ',' + cur[header];
+                }
+            }
+
+            return acc + '\n' + row;
+        });
+
+        DLCFile('result_', csv);
+    });
 }
 
 function showResult(rawData) {
@@ -95,10 +134,6 @@ function showResult(rawData) {
     let formattedData = formatData(rawData);
 
     console.log(formattedData);
-}
-
-function convertCSV(results, filename) {
-    //
 }
 
 /**
@@ -131,4 +166,29 @@ function formatData(rawData) {
     });
 
     return formattedData;
+}
+
+function DLCFile(name, data) {
+    let fileName = name + currentDateTime() + '.csv';
+
+    let bom = new Uint8Array([0xef, 0xbb, 0xbf]);
+    let blob = new Blob([bom, data], {type: 'text/csv'});
+
+    let linkElm = document.createElement('a');
+    linkElm.download = fileName;
+    linkElm.href = URL.createObjectURL(blob);
+    linkElm.click();
+
+    URL.revokeObjectURL(linkElm.href);
+}
+
+function currentDateTime() {
+    let now = new Date();
+    let year = now.getFullYear();
+    let month = (now.getMonth() + 1).toString().padStart(2, '0');
+    let day = now.getDate().toString().padStart(2, '0');
+    let hours = now.getHours().toString().padStart(2, '0');
+    let minutes = now.getMinutes().toString().padStart(2, '0');
+
+    return year + month + day + hours + minutes;
 }
