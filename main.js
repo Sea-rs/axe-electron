@@ -72,8 +72,10 @@ class axe {
     constructor(transferredData) {
         this.axeResultPC = [];
         this.axeResultSP = [];
+        this.axeResult = {};
         this.accessResultPC = [];
         this.accessResultSP = [];
+        this.accessResult = {};
         this.errorList = [];
         this.basicID = transferredData.basicID;
         this.basicPass = transferredData.basicPass;
@@ -84,6 +86,27 @@ class axe {
         this.axeTags = [
             'wcag2a'
         ];
+
+        this.device = {
+            pc: {
+                size: {
+                    width: 1920,
+                    height: 1080
+                }
+            },
+            sp: {
+                ua: puppeteer.KnownDevices['iPhone SE'],
+                size: {
+                    width: 640,
+                    height: 1136
+                }
+            }
+        };
+
+        for (let index in this.device) {
+            this.accessResult[index] = [];
+            this.axeResult[index] = [];
+        }
     }
 
     async validation() {
@@ -101,40 +124,46 @@ class axe {
             password: this.basicPass
         });
 
-        for (let i = 0; i < this.urlList.length; i++) {
-            let response = await page.goto(this.urlList[i], {waitUntil: ['load', 'networkidle0']});
-
+        for (let index in this.device) {
             // sp/pcで分ける
             // viewportで設定する
+            await page.setViewport(this.device[index].size);
 
-            let status = response.status();
+            if (index === 'sp') {
+                await page.emulate(this.device[index].ua);
+            }
 
-            if (status >= 400) {
-                this.accessResultPC.push({
+            for (let i = 0; i < this.urlList.length; i++) {
+                let response = await page.goto(this.urlList[i], {waitUntil: ['load', 'networkidle0']});
+                let status = response.status();
+    
+                if (status >= 400) {
+                    this.accessResult[index].push({
+                        url: this.urlList[i],
+                        axeURL: page.url(),
+                        status: status
+                    });
+    
+                    continue;
+                }
+    
+                await this.axePuppeteer(page, index);
+    
+                this.accessResult[index].push({
                     url: this.urlList[i],
                     axeURL: page.url(),
                     status: status
                 });
-
-                continue;
             }
-
-            await this.axePuppeteer(page);
-
-            this.accessResultPC.push({
-                url: this.urlList[i],
-                axeURL: page.url(),
-                status: status
-            });
         }
 
         page.close();
         browser.close();
     }
 
-    async axePuppeteer(page) {
+    async axePuppeteer(page, device) {
         try {
-            this.axeResultPC.push(await new AxePuppeteer(page).configure(CONFIG).withTags(this.axeTags).analyze());
+            this.axeResult[device].push(await new AxePuppeteer(page).configure(CONFIG).withTags(this.axeTags).analyze());
         } catch(error) {
             let errorObj = ERROR_MSG.AXE_PUPPETEER_ERROR;
             errorObj.rawError = error;
@@ -162,12 +191,16 @@ class axe {
     }
 
     get getResult() {
-        return this.axeResultPC;
+        return this.axeResult;
     }
 }
 
 // todo loginが必要かの判定処理いれる
 class axeManual extends axe {
+    constructor(transferredData) {
+        super(transferredData);
+    }
+
     async startAxe() {
         let browser = await puppeteer.launch({headless: false});
         let page = await browser.newPage();

@@ -76,9 +76,9 @@ function init() {
 
         document.querySelector('.js-loading').classList.remove('hidden');
 
-        console.log(await window.ipcApp.transferredData(dataObj));
+        rawData = await window.ipcApp.transferredData(dataObj);
 
-        showResult();
+        showResult(rawData);
 
         document.querySelector('.js-loading').classList.add('hidden');
     });
@@ -87,6 +87,7 @@ function init() {
     document.getElementById('result__DLBtn').addEventListener('click', () => {
         let formattedData = formatData(rawData);
 
+        /*
         let csv = formattedData.reduce((acc, cur) => {
             // let currentData = '';
 
@@ -119,8 +120,11 @@ function init() {
 
             return acc + '\n' + row;
         });
+        */
 
-        DLCFile('result_', csv);
+        console.log(formattedData);
+
+        // DLCFile('result_', csv);
     });
 }
 
@@ -142,28 +146,34 @@ function showResult(rawData) {
  * @returns csvように書き出すデータ
  */
 function formatData(rawData) {
-    let formattedData = [];
+    let formattedData = {};
 
-    // URLごと
-    rawData.forEach(data => {
-        // violation内の配列
-        data.violations.forEach(violation => {
-            // nodesで指摘されている箇所
-            violation.nodes.forEach(node => {
-                formattedData.push({
-                    url: data.url,
-                    id: violation.id,
-                    impact: violation.impact,
-                    tags: violation.tags.join(),
-                    description: violation.description,
-                    failureSummary: node.failureSummary,
-                    dom: node.html,
-                    selector: node.target
+    for (let index in rawData) {
+        if (!formattedData[index]) {
+            formattedData[index] = [];
+        }
+
+        // URLごと
+        rawData[index].forEach(data => {
+            // violation内の配列
+            data.violations.forEach(violation => {
+                // nodesで指摘されている箇所
+                violation.nodes.forEach(node => {
+                    formattedData[index].push({
+                        url: data.url,
+                        id: violation.id,
+                        impact: violation.impact,
+                        tags: violation.tags.join(),
+                        description: violation.description,
+                        failureSummary: node.failureSummary,
+                        dom: node.html,
+                        selector: node.target
+                    });
                 });
-            });
 
+            });
         });
-    });
+    }
 
     return formattedData;
 }

@@ -1,0 +1,2867 @@
+[
+    {
+        "testEngine": {
+            "name": "axe-core",
+            "version": "4.8.4"
+        },
+        "testRunner": {
+            "name": "axe"
+        },
+        "testEnvironment": {
+            "userAgent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) HeadlessChrome/122.0.0.0 Safari/537.36",
+            "windowWidth": 800,
+            "windowHeight": 600,
+            "orientationAngle": 0,
+            "orientationType": "portrait-primary"
+        },
+        "timestamp": "2024-03-18T08:25:28.781Z",
+        "url": "https://qiita.com/niisan-tokyo/items/4ec961ee3f163b2dc4e7",
+        "toolOptions": {
+            "reporter": "v1"
+        },
+        "inapplicable": [
+            {
+                "id": "accesskeys",
+                "impact": null,
+                "tags": [
+                    "cat.keyboard",
+                    "best-practice"
+                ],
+                "description": "Ensures every accesskey attribute value is unique",
+                "help": "accesskey attribute value should be unique",
+                "helpUrl": "https://dequeuniversity.com/rules/axe/4.8/accesskeys?application=axe-puppeteer",
+                "nodes": []
+            },
+            {
+                "id": "area-alt",
+                "impact": null,
+                "tags": [
+                    "cat.text-alternatives",
+                    "wcag2a",
+                    "wcag244",
+                    "wcag412",
+                    "section508",
+                    "section508.22.a",
+                    "TTv5",
+                    "TT6.a",
+                    "EN-301-549",
+                    "EN-9.2.4.4",
+                    "EN-9.4.1.2",
+                    "ACT"
+                ],
+                "description": "Ensures <area> elements of image maps have alternate text",
+                "help": "Active <area> elements must have alternate text",
+                "helpUrl": "https://dequeuniversity.com/rules/axe/4.8/area-alt?application=axe-puppeteer",
+                "nodes": []
+            },
+            {
+                "id": "aria-braille-equivalent",
+                "impact": null,
+                "tags": [
+                    "cat.aria",
+                    "wcag2a",
+                    "wcag412",
+                    "EN-301-549",
+                    "EN-9.4.1.2"
+                ],
+                "description": "Ensure aria-braillelabel and aria-brailleroledescription have a non-braille equivalent",
+                "help": "aria-braille attributes must have a non-braille equivalent",
+                "helpUrl": "https://dequeuniversity.com/rules/axe/4.8/aria-braille-equivalent?application=axe-puppeteer",
+                "nodes": []
+            },
+            {
+                "id": "aria-command-name",
+                "impact": null,
+                "tags": [
+                    "cat.aria",
+                    "wcag2a",
+                    "wcag412",
+                    "TTv5",
+                    "TT6.a",
+                    "EN-301-549",
+                    "EN-9.4.1.2",
+                    "ACT"
+                ],
+                "description": "Ensures every ARIA button, link and menuitem has an accessible name",
+                "help": "ARIA commands must have an accessible name",
+                "helpUrl": "https://dequeuniversity.com/rules/axe/4.8/aria-command-name?application=axe-puppeteer",
+                "nodes": []
+            },
+            {
+                "id": "aria-dialog-name",
+                "impact": null,
+                "tags": [
+                    "cat.aria",
+                    "best-practice"
+                ],
+                "description": "Ensures every ARIA dialog and alertdialog node has an accessible name",
+                "help": "ARIA dialog and alertdialog nodes should have an accessible name",
+                "helpUrl": "https://dequeuniversity.com/rules/axe/4.8/aria-dialog-name?application=axe-puppeteer",
+                "nodes": []
+            },
+            {
+                "id": "aria-input-field-name",
+                "impact": null,
+                "tags": [
+                    "cat.aria",
+                    "wcag2a",
+                    "wcag412",
+                    "TTv5",
+                    "TT5.c",
+                    "EN-301-549",
+                    "EN-9.4.1.2",
+                    "ACT"
+                ],
+                "description": "Ensures every ARIA input field has an accessible name",
+                "help": "ARIA input fields must have an accessible name",
+                "helpUrl": "https://dequeuniversity.com/rules/axe/4.8/aria-input-field-name?application=axe-puppeteer",
+                "nodes": []
+            },
+            {
+                "id": "aria-meter-name",
+                "impact": null,
+                "tags": [
+                    "cat.aria",
+                    "wcag2a",
+                    "wcag111",
+                    "EN-301-549",
+                    "EN-9.1.1.1"
+                ],
+                "description": "Ensures every ARIA meter node has an accessible name",
+                "help": "ARIA meter nodes must have an accessible name",
+                "helpUrl": "https://dequeuniversity.com/rules/axe/4.8/aria-meter-name?application=axe-puppeteer",
+                "nodes": []
+            },
+            {
+                "id": "aria-progressbar-name",
+                "impact": null,
+                "tags": [
+                    "cat.aria",
+                    "wcag2a",
+                    "wcag111",
+                    "EN-301-549",
+                    "EN-9.1.1.1"
+                ],
+                "description": "Ensures every ARIA progressbar node has an accessible name",
+                "help": "ARIA progressbar nodes must have an accessible name",
+                "helpUrl": "https://dequeuniversity.com/rules/axe/4.8/aria-progressbar-name?application=axe-puppeteer",
+                "nodes": []
+            },
+            {
+                "id": "aria-required-children",
+                "impact": null,
+                "tags": [
+                    "cat.aria",
+                    "wcag2a",
+                    "wcag131",
+                    "EN-301-549",
+                    "EN-9.1.3.1"
+                ],
+                "description": "Ensures elements with an ARIA role that require child roles contain them",
+                "help": "Certain ARIA roles must contain particular children",
+                "helpUrl": "https://dequeuniversity.com/rules/axe/4.8/aria-required-children?application=axe-puppeteer",
+                "nodes": []
+            },
+            {
+                "id": "aria-required-parent",
+                "impact": null,
+                "tags": [
+                    "cat.aria",
+                    "wcag2a",
+                    "wcag131",
+                    "EN-301-549",
+                    "EN-9.1.3.1"
+                ],
+                "description": "Ensures elements with an ARIA role that require parent roles are contained by them",
+                "help": "Certain ARIA roles must be contained by particular parents",
+                "helpUrl": "https://dequeuniversity.com/rules/axe/4.8/aria-required-parent?application=axe-puppeteer",
+                "nodes": []
+            },
+            {
+                "id": "aria-text",
+                "impact": null,
+                "tags": [
+                    "cat.aria",
+                    "best-practice"
+                ],
+                "description": "Ensures role=\"text\" is used on elements with no focusable descendants",
+                "help": "\"role=text\" should have no focusable descendants",
+                "helpUrl": "https://dequeuniversity.com/rules/axe/4.8/aria-text?application=axe-puppeteer",
+                "nodes": []
+            },
+            {
+                "id": "aria-toggle-field-name",
+                "impact": null,
+                "tags": [
+                    "cat.aria",
+                    "wcag2a",
+                    "wcag412",
+                    "TTv5",
+                    "TT5.c",
+                    "EN-301-549",
+                    "EN-9.4.1.2",
+                    "ACT"
+                ],
+                "description": "Ensures every ARIA toggle field has an accessible name",
+                "help": "ARIA toggle fields must have an accessible name",
+                "helpUrl": "https://dequeuniversity.com/rules/axe/4.8/aria-toggle-field-name?application=axe-puppeteer",
+                "nodes": []
+            },
+            {
+                "id": "aria-tooltip-name",
+                "impact": null,
+                "tags": [
+                    "cat.aria",
+                    "wcag2a",
+                    "wcag412",
+                    "EN-301-549",
+                    "EN-9.4.1.2"
+                ],
+                "description": "Ensures every ARIA tooltip node has an accessible name",
+                "help": "ARIA tooltip nodes must have an accessible name",
+                "helpUrl": "https://dequeuniversity.com/rules/axe/4.8/aria-tooltip-name?application=axe-puppeteer",
+                "nodes": []
+            },
+            {
+                "id": "aria-treeitem-name",
+                "impact": null,
+                "tags": [
+                    "cat.aria",
+                    "best-practice"
+                ],
+                "description": "Ensures every ARIA treeitem node has an accessible name",
+                "help": "ARIA treeitem nodes should have an accessible name",
+                "helpUrl": "https://dequeuniversity.com/rules/axe/4.8/aria-treeitem-name?application=axe-puppeteer",
+                "nodes": []
+            },
+            {
+                "id": "autocomplete-valid",
+                "impact": null,
+                "tags": [
+                    "cat.forms",
+                    "wcag21aa",
+                    "wcag135",
+                    "EN-301-549",
+                    "EN-9.1.3.5",
+                    "ACT"
+                ],
+                "description": "Ensure the autocomplete attribute is correct and suitable for the form field",
+                "help": "autocomplete attribute must be used correctly",
+                "helpUrl": "https://dequeuniversity.com/rules/axe/4.8/autocomplete-valid?application=axe-puppeteer",
+                "nodes": []
+            },
+            {
+                "id": "blink",
+                "impact": null,
+                "tags": [
+                    "cat.time-and-media",
+                    "wcag2a",
+                    "wcag222",
+                    "section508",
+                    "section508.22.j",
+                    "TTv5",
+                    "TT2.b",
+                    "EN-301-549",
+                    "EN-9.2.2.2"
+                ],
+                "description": "Ensures <blink> elements are not used",
+                "help": "<blink> elements are deprecated and must not be used",
+                "helpUrl": "https://dequeuniversity.com/rules/axe/4.8/blink?application=axe-puppeteer",
+                "nodes": []
+            },
+            {
+                "id": "empty-table-header",
+                "impact": null,
+                "tags": [
+                    "cat.name-role-value",
+                    "best-practice"
+                ],
+                "description": "Ensures table headers have discernible text",
+                "help": "Table header text should not be empty",
+                "helpUrl": "https://dequeuniversity.com/rules/axe/4.8/empty-table-header?application=axe-puppeteer",
+                "nodes": []
+            },
+            {
+                "id": "form-field-multiple-labels",
+                "impact": null,
+                "tags": [
+                    "cat.forms",
+                    "wcag2a",
+                    "wcag332",
+                    "TTv5",
+                    "TT5.c",
+                    "EN-301-549",
+                    "EN-9.3.3.2"
+                ],
+                "description": "Ensures form field does not have multiple label elements",
+                "help": "Form field must not have multiple label elements",
+                "helpUrl": "https://dequeuniversity.com/rules/axe/4.8/form-field-multiple-labels?application=axe-puppeteer",
+                "nodes": []
+            },
+            {
+                "id": "frame-focusable-content",
+                "impact": null,
+                "tags": [
+                    "cat.keyboard",
+                    "wcag2a",
+                    "wcag211",
+                    "TTv5",
+                    "TT4.a",
+                    "EN-301-549",
+                    "EN-9.2.1.1"
+                ],
+                "description": "Ensures <frame> and <iframe> elements with focusable content do not have tabindex=-1",
+                "help": "Frames with focusable content must not have tabindex=-1",
+                "helpUrl": "https://dequeuniversity.com/rules/axe/4.8/frame-focusable-content?application=axe-puppeteer",
+                "nodes": []
+            },
+            {
+                "id": "html-xml-lang-mismatch",
+                "impact": null,
+                "tags": [
+                    "cat.language",
+                    "wcag2a",
+                    "wcag311",
+                    "EN-301-549",
+                    "EN-9.3.1.1",
+                    "ACT"
+                ],
+                "description": "Ensure that HTML elements with both valid lang and xml:lang attributes agree on the base language of the page",
+                "help": "HTML elements with lang and xml:lang must have the same base language",
+                "helpUrl": "https://dequeuniversity.com/rules/axe/4.8/html-xml-lang-mismatch?application=axe-puppeteer",
+                "nodes": []
+            },
+            {
+                "id": "input-button-name",
+                "impact": null,
+                "tags": [
+                    "cat.name-role-value",
+                    "wcag2a",
+                    "wcag412",
+                    "section508",
+                    "section508.22.a",
+                    "TTv5",
+                    "TT5.c",
+                    "EN-301-549",
+                    "EN-9.4.1.2",
+                    "ACT"
+                ],
+                "description": "Ensures input buttons have discernible text",
+                "help": "Input buttons must have discernible text",
+                "helpUrl": "https://dequeuniversity.com/rules/axe/4.8/input-button-name?application=axe-puppeteer",
+                "nodes": []
+            },
+            {
+                "id": "input-image-alt",
+                "impact": null,
+                "tags": [
+                    "cat.text-alternatives",
+                    "wcag2a",
+                    "wcag111",
+                    "wcag412",
+                    "section508",
+                    "section508.22.a",
+                    "TTv5",
+                    "TT7.a",
+                    "EN-301-549",
+                    "EN-9.1.1.1",
+                    "EN-9.4.1.2",
+                    "ACT"
+                ],
+                "description": "Ensures <input type=\"image\"> elements have alternate text",
+                "help": "Image buttons must have alternate text",
+                "helpUrl": "https://dequeuniversity.com/rules/axe/4.8/input-image-alt?application=axe-puppeteer",
+                "nodes": []
+            },
+            {
+                "id": "label-title-only",
+                "impact": null,
+                "tags": [
+                    "cat.forms",
+                    "best-practice"
+                ],
+                "description": "Ensures that every form element has a visible label and is not solely labeled using hidden labels, or the title or aria-describedby attributes",
+                "help": "Form elements should have a visible label",
+                "helpUrl": "https://dequeuniversity.com/rules/axe/4.8/label-title-only?application=axe-puppeteer",
+                "nodes": []
+            },
+            {
+                "id": "label",
+                "impact": null,
+                "tags": [
+                    "cat.forms",
+                    "wcag2a",
+                    "wcag412",
+                    "section508",
+                    "section508.22.n",
+                    "TTv5",
+                    "TT5.c",
+                    "EN-301-549",
+                    "EN-9.4.1.2",
+                    "ACT"
+                ],
+                "description": "Ensures every form element has a label",
+                "help": "Form elements must have labels",
+                "helpUrl": "https://dequeuniversity.com/rules/axe/4.8/label?application=axe-puppeteer",
+                "nodes": []
+            },
+            {
+                "id": "landmark-complementary-is-top-level",
+                "impact": null,
+                "tags": [
+                    "cat.semantics",
+                    "best-practice"
+                ],
+                "description": "Ensures the complementary landmark or aside is at top level",
+                "help": "Aside should not be contained in another landmark",
+                "helpUrl": "https://dequeuniversity.com/rules/axe/4.8/landmark-complementary-is-top-level?application=axe-puppeteer",
+                "nodes": []
+            },
+            {
+                "id": "landmark-main-is-top-level",
+                "impact": null,
+                "tags": [
+                    "cat.semantics",
+                    "best-practice"
+                ],
+                "description": "Ensures the main landmark is at top level",
+                "help": "Main landmark should not be contained in another landmark",
+                "helpUrl": "https://dequeuniversity.com/rules/axe/4.8/landmark-main-is-top-level?application=axe-puppeteer",
+                "nodes": []
+            },
+            {
+                "id": "landmark-no-duplicate-main",
+                "impact": null,
+                "tags": [
+                    "cat.semantics",
+                    "best-practice"
+                ],
+                "description": "Ensures the document has at most one main landmark",
+                "help": "Document should not have more than one main landmark",
+                "helpUrl": "https://dequeuniversity.com/rules/axe/4.8/landmark-no-duplicate-main?application=axe-puppeteer",
+                "nodes": []
+            },
+            {
+                "id": "link-in-text-block",
+                "impact": null,
+                "tags": [
+                    "cat.color",
+                    "wcag2a",
+                    "wcag141",
+                    "TTv5",
+                    "TT13.a",
+                    "EN-301-549",
+                    "EN-9.1.4.1"
+                ],
+                "description": "Ensure links are distinguished from surrounding text in a way that does not rely on color",
+                "help": "Links must be distinguishable without relying on color",
+                "helpUrl": "https://dequeuniversity.com/rules/axe/4.8/link-in-text-block?application=axe-puppeteer",
+                "nodes": []
+            },
+            {
+                "id": "marquee",
+                "impact": null,
+                "tags": [
+                    "cat.parsing",
+                    "wcag2a",
+                    "wcag222",
+                    "TTv5",
+                    "TT2.b",
+                    "EN-301-549",
+                    "EN-9.2.2.2"
+                ],
+                "description": "Ensures <marquee> elements are not used",
+                "help": "<marquee> elements are deprecated and must not be used",
+                "helpUrl": "https://dequeuniversity.com/rules/axe/4.8/marquee?application=axe-puppeteer",
+                "nodes": []
+            },
+            {
+                "id": "meta-refresh",
+                "impact": null,
+                "tags": [
+                    "cat.time-and-media",
+                    "wcag2a",
+                    "wcag221",
+                    "TTv5",
+                    "TT8.a",
+                    "EN-301-549",
+                    "EN-9.2.2.1"
+                ],
+                "description": "Ensures <meta http-equiv=\"refresh\"> is not used for delayed refresh",
+                "help": "Delayed refresh under 20 hours must not be used",
+                "helpUrl": "https://dequeuniversity.com/rules/axe/4.8/meta-refresh?application=axe-puppeteer",
+                "nodes": []
+            },
+            {
+                "id": "object-alt",
+                "impact": null,
+                "tags": [
+                    "cat.text-alternatives",
+                    "wcag2a",
+                    "wcag111",
+                    "section508",
+                    "section508.22.a",
+                    "EN-301-549",
+                    "EN-9.1.1.1"
+                ],
+                "description": "Ensures <object> elements have alternate text",
+                "help": "<object> elements must have alternate text",
+                "helpUrl": "https://dequeuniversity.com/rules/axe/4.8/object-alt?application=axe-puppeteer",
+                "nodes": []
+            },
+            {
+                "id": "role-img-alt",
+                "impact": null,
+                "tags": [
+                    "cat.text-alternatives",
+                    "wcag2a",
+                    "wcag111",
+                    "section508",
+                    "section508.22.a",
+                    "TTv5",
+                    "TT7.a",
+                    "EN-301-549",
+                    "EN-9.1.1.1",
+                    "ACT"
+                ],
+                "description": "Ensures [role=\"img\"] elements have alternate text",
+                "help": "[role=\"img\"] elements must have an alternative text",
+                "helpUrl": "https://dequeuniversity.com/rules/axe/4.8/role-img-alt?application=axe-puppeteer",
+                "nodes": []
+            },
+            {
+                "id": "scope-attr-valid",
+                "impact": null,
+                "tags": [
+                    "cat.tables",
+                    "best-practice"
+                ],
+                "description": "Ensures the scope attribute is used correctly on tables",
+                "help": "scope attribute should be used correctly",
+                "helpUrl": "https://dequeuniversity.com/rules/axe/4.8/scope-attr-valid?application=axe-puppeteer",
+                "nodes": []
+            },
+            {
+                "id": "scrollable-region-focusable",
+                "impact": null,
+                "tags": [
+                    "cat.keyboard",
+                    "wcag2a",
+                    "wcag211",
+                    "TTv5",
+                    "TT4.a",
+                    "EN-301-549",
+                    "EN-9.2.1.1"
+                ],
+                "description": "Ensure elements that have scrollable content are accessible by keyboard",
+                "help": "Scrollable region must have keyboard access",
+                "helpUrl": "https://dequeuniversity.com/rules/axe/4.8/scrollable-region-focusable?application=axe-puppeteer",
+                "nodes": []
+            },
+            {
+                "id": "select-name",
+                "impact": null,
+                "tags": [
+                    "cat.forms",
+                    "wcag2a",
+                    "wcag412",
+                    "section508",
+                    "section508.22.n",
+                    "TTv5",
+                    "TT5.c",
+                    "EN-301-549",
+                    "EN-9.4.1.2",
+                    "ACT"
+                ],
+                "description": "Ensures select element has an accessible name",
+                "help": "Select element must have an accessible name",
+                "helpUrl": "https://dequeuniversity.com/rules/axe/4.8/select-name?application=axe-puppeteer",
+                "nodes": []
+            },
+            {
+                "id": "server-side-image-map",
+                "impact": null,
+                "tags": [
+                    "cat.text-alternatives",
+                    "wcag2a",
+                    "wcag211",
+                    "section508",
+                    "section508.22.f",
+                    "TTv5",
+                    "TT4.a",
+                    "EN-301-549",
+                    "EN-9.2.1.1"
+                ],
+                "description": "Ensures that server-side image maps are not used",
+                "help": "Server-side image maps must not be used",
+                "helpUrl": "https://dequeuniversity.com/rules/axe/4.8/server-side-image-map?application=axe-puppeteer",
+                "nodes": []
+            },
+            {
+                "id": "skip-link",
+                "impact": null,
+                "tags": [
+                    "cat.keyboard",
+                    "best-practice"
+                ],
+                "description": "Ensure all skip links have a focusable target",
+                "help": "The skip-link target should exist and be focusable",
+                "helpUrl": "https://dequeuniversity.com/rules/axe/4.8/skip-link?application=axe-puppeteer",
+                "nodes": []
+            },
+            {
+                "id": "svg-img-alt",
+                "impact": null,
+                "tags": [
+                    "cat.text-alternatives",
+                    "wcag2a",
+                    "wcag111",
+                    "section508",
+                    "section508.22.a",
+                    "TTv5",
+                    "TT7.a",
+                    "EN-301-549",
+                    "EN-9.1.1.1",
+                    "ACT"
+                ],
+                "description": "Ensures <svg> elements with an img, graphics-document or graphics-symbol role have an accessible text",
+                "help": "<svg> elements with an img role must have an alternative text",
+                "helpUrl": "https://dequeuniversity.com/rules/axe/4.8/svg-img-alt?application=axe-puppeteer",
+                "nodes": []
+            },
+            {
+                "id": "table-duplicate-name",
+                "impact": null,
+                "tags": [
+                    "cat.tables",
+                    "best-practice"
+                ],
+                "description": "Ensure the <caption> element does not contain the same text as the summary attribute",
+                "help": "tables should not have the same summary and caption",
+                "helpUrl": "https://dequeuniversity.com/rules/axe/4.8/table-duplicate-name?application=axe-puppeteer",
+                "nodes": []
+            },
+            {
+                "id": "td-headers-attr",
+                "impact": null,
+                "tags": [
+                    "cat.tables",
+                    "wcag2a",
+                    "wcag131",
+                    "section508",
+                    "section508.22.g",
+                    "TTv5",
+                    "TT14.b",
+                    "EN-301-549",
+                    "EN-9.1.3.1"
+                ],
+                "description": "Ensure that each cell in a table that uses the headers attribute refers only to other cells in that table",
+                "help": "Table cells that use the headers attribute must only refer to cells in the same table",
+                "helpUrl": "https://dequeuniversity.com/rules/axe/4.8/td-headers-attr?application=axe-puppeteer",
+                "nodes": []
+            },
+            {
+                "id": "th-has-data-cells",
+                "impact": null,
+                "tags": [
+                    "cat.tables",
+                    "wcag2a",
+                    "wcag131",
+                    "section508",
+                    "section508.22.g",
+                    "TTv5",
+                    "TT14.b",
+                    "EN-301-549",
+                    "EN-9.1.3.1"
+                ],
+                "description": "Ensure that <th> elements and elements with role=columnheader/rowheader have data cells they describe",
+                "help": "Table headers in a data table must refer to data cells",
+                "helpUrl": "https://dequeuniversity.com/rules/axe/4.8/th-has-data-cells?application=axe-puppeteer",
+                "nodes": []
+            },
+            {
+                "id": "valid-lang",
+                "impact": null,
+                "tags": [
+                    "cat.language",
+                    "wcag2aa",
+                    "wcag312",
+                    "TTv5",
+                    "TT11.b",
+                    "EN-301-549",
+                    "EN-9.3.1.2",
+                    "ACT"
+                ],
+                "description": "Ensures lang attributes have valid values",
+                "help": "lang attribute must have a valid value",
+                "helpUrl": "https://dequeuniversity.com/rules/axe/4.8/valid-lang?application=axe-puppeteer",
+                "nodes": []
+            },
+            {
+                "id": "video-caption",
+                "impact": null,
+                "tags": [
+                    "cat.text-alternatives",
+                    "wcag2a",
+                    "wcag122",
+                    "section508",
+                    "section508.22.a",
+                    "TTv5",
+                    "TT17.a",
+                    "EN-301-549",
+                    "EN-9.1.2.2"
+                ],
+                "description": "Ensures <video> elements have captions",
+                "help": "<video> elements must have captions",
+                "helpUrl": "https://dequeuniversity.com/rules/axe/4.8/video-caption?application=axe-puppeteer",
+                "nodes": []
+            },
+            {
+                "id": "no-autoplay-audio",
+                "impact": null,
+                "tags": [
+                    "cat.time-and-media",
+                    "wcag2a",
+                    "wcag142",
+                    "TTv5",
+                    "TT2.a",
+                    "EN-301-549",
+                    "EN-9.1.4.2",
+                    "ACT"
+                ],
+                "description": "Ensures <video> or <audio> elements do not autoplay audio for more than 3 seconds without a control mechanism to stop or mute the audio",
+                "help": "<video> or <audio> elements must not play automatically",
+                "helpUrl": "https://dequeuniversity.com/rules/axe/4.8/no-autoplay-audio?application=axe-puppeteer",
+                "nodes": []
+            }
+        ],
+        "incomplete": [
+            {
+                "id": "color-contrast",
+                "impact": "serious",
+                "tags": [
+                    "cat.color",
+                    "wcag2aa",
+                    "wcag143",
+                    "TTv5",
+                    "TT13.c",
+                    "EN-301-549",
+                    "EN-9.1.4.3",
+                    "ACT"
+                ],
+                "description": "Ensures the contrast between foreground and background colors meets WCAG 2 AA minimum contrast ratio thresholds",
+                "help": "Elements must meet minimum color contrast ratio thresholds",
+                "helpUrl": "https://dequeuniversity.com/rules/axe/4.8/color-contrast?application=axe-puppeteer",
+                "nodes": [
+                    {
+                        "any": [
+                            {
+                                "id": "color-contrast",
+                                "data": {
+                                    "contrastRatio": 0,
+                                    "fontSize": "12.0pt (16px)",
+                                    "fontWeight": "normal",
+                                    "expectedContrastRatio": "4.5:1"
+                                },
+                                "relatedNodes": [],
+                                "impact": "serious",
+                                "message": "Unable to determine contrast ratio"
+                            }
+                        ],
+                        "all": [],
+                        "none": [],
+                        "impact": "serious",
+                        "html": "<span class=\"style-1afofdy\">記事、質問を検索</span>",
+                        "target": [
+                            ".style-1afofdy"
+                        ],
+                        "failureSummary": "Fix any of the following:\n  Unable to determine contrast ratio"
+                    },
+                    {
+                        "any": [
+                            {
+                                "id": "color-contrast",
+                                "data": {
+                                    "contrastRatio": 0,
+                                    "fontSize": "13.5pt (18px)",
+                                    "fontWeight": "normal",
+                                    "messageKey": "elmPartiallyObscuring",
+                                    "expectedContrastRatio": "4.5:1"
+                                },
+                                "relatedNodes": [],
+                                "impact": "serious",
+                                "message": "Element's background color could not be determined because it partially overlaps other elements"
+                            }
+                        ],
+                        "all": [],
+                        "none": [],
+                        "impact": "serious",
+                        "html": "<h2 class=\"style-11292d1\">Qiitaにログインして、便利な機能を使ってみませんか？</h2>",
+                        "target": [
+                            ".style-11292d1"
+                        ],
+                        "failureSummary": "Fix any of the following:\n  Element's background color could not be determined because it partially overlaps other elements"
+                    },
+                    {
+                        "any": [
+                            {
+                                "id": "color-contrast",
+                                "data": {
+                                    "contrastRatio": 0,
+                                    "fontSize": "15.0pt (20px)",
+                                    "fontWeight": "normal",
+                                    "messageKey": "bgImage",
+                                    "expectedContrastRatio": "4.5:1"
+                                },
+                                "relatedNodes": [
+                                    {
+                                        "html": "<div class=\"style-qidqy3\">",
+                                        "target": [
+                                            ".style-qidqy3"
+                                        ]
+                                    }
+                                ],
+                                "impact": "serious",
+                                "message": "Element's background color could not be determined due to a background image"
+                            }
+                        ],
+                        "all": [],
+                        "none": [],
+                        "impact": "serious",
+                        "html": "<p class=\"style-1nyasl8\">新規登録して、もっと便利にQiitaを使ってみよう</p>",
+                        "target": [
+                            ".style-1nyasl8"
+                        ],
+                        "failureSummary": "Fix any of the following:\n  Element's background color could not be determined due to a background image"
+                    },
+                    {
+                        "any": [
+                            {
+                                "id": "color-contrast",
+                                "data": {
+                                    "contrastRatio": 0,
+                                    "fontSize": "12.0pt (16px)",
+                                    "fontWeight": "normal",
+                                    "messageKey": "bgImage",
+                                    "expectedContrastRatio": "4.5:1"
+                                },
+                                "relatedNodes": [
+                                    {
+                                        "html": "<div class=\"style-qidqy3\">",
+                                        "target": [
+                                            ".style-qidqy3"
+                                        ]
+                                    }
+                                ],
+                                "impact": "serious",
+                                "message": "Element's background color could not be determined due to a background image"
+                            }
+                        ],
+                        "all": [],
+                        "none": [],
+                        "impact": "serious",
+                        "html": "<li>あなたにマッチした記事をお届けします</li>",
+                        "target": [
+                            ".style-1i89dtz > li:nth-child(1)"
+                        ],
+                        "failureSummary": "Fix any of the following:\n  Element's background color could not be determined due to a background image"
+                    },
+                    {
+                        "any": [
+                            {
+                                "id": "color-contrast",
+                                "data": {
+                                    "contrastRatio": 0,
+                                    "fontSize": "12.0pt (16px)",
+                                    "fontWeight": "normal",
+                                    "messageKey": "bgImage",
+                                    "expectedContrastRatio": "4.5:1"
+                                },
+                                "relatedNodes": [
+                                    {
+                                        "html": "<div class=\"style-qidqy3\">",
+                                        "target": [
+                                            ".style-qidqy3"
+                                        ]
+                                    }
+                                ],
+                                "impact": "serious",
+                                "message": "Element's background color could not be determined due to a background image"
+                            }
+                        ],
+                        "all": [],
+                        "none": [],
+                        "impact": "serious",
+                        "html": "<li>便利な情報をあとで効率的に読み返せます</li>",
+                        "target": [
+                            ".style-1i89dtz > li:nth-child(2)"
+                        ],
+                        "failureSummary": "Fix any of the following:\n  Element's background color could not be determined due to a background image"
+                    },
+                    {
+                        "any": [
+                            {
+                                "id": "color-contrast",
+                                "data": {
+                                    "contrastRatio": 0,
+                                    "fontSize": "12.0pt (16px)",
+                                    "fontWeight": "normal",
+                                    "messageKey": "bgImage",
+                                    "expectedContrastRatio": "4.5:1"
+                                },
+                                "relatedNodes": [
+                                    {
+                                        "html": "<div class=\"style-qidqy3\">",
+                                        "target": [
+                                            ".style-qidqy3"
+                                        ]
+                                    }
+                                ],
+                                "impact": "serious",
+                                "message": "Element's background color could not be determined due to a background image"
+                            }
+                        ],
+                        "all": [],
+                        "none": [],
+                        "impact": "serious",
+                        "html": "<li>ダークテーマを利用できます</li>",
+                        "target": [
+                            ".style-1i89dtz > li:nth-child(3)"
+                        ],
+                        "failureSummary": "Fix any of the following:\n  Element's background color could not be determined due to a background image"
+                    },
+                    {
+                        "any": [
+                            {
+                                "id": "color-contrast",
+                                "data": {
+                                    "contrastRatio": 0,
+                                    "fontSize": "10.5pt (14px)",
+                                    "fontWeight": "normal",
+                                    "messageKey": "bgImage",
+                                    "expectedContrastRatio": "4.5:1"
+                                },
+                                "relatedNodes": [
+                                    {
+                                        "html": "<div class=\"style-qidqy3\">",
+                                        "target": [
+                                            ".style-qidqy3"
+                                        ]
+                                    }
+                                ],
+                                "impact": "serious",
+                                "message": "Element's background color could not be determined due to a background image"
+                            }
+                        ],
+                        "all": [],
+                        "none": [],
+                        "impact": "serious",
+                        "html": "<a href=\"https://help.qiita.com/ja/articles/qiita-login-user\" target=\"_blank\" rel=\"noopener noreferrer\" class=\"style-dzaums\">ログインすると使える機能について</a>",
+                        "target": [
+                            ".style-dzaums"
+                        ],
+                        "failureSummary": "Fix any of the following:\n  Element's background color could not be determined due to a background image"
+                    },
+                    {
+                        "any": [
+                            {
+                                "id": "color-contrast",
+                                "data": {
+                                    "contrastRatio": 0,
+                                    "fontSize": "12.0pt (16px)",
+                                    "fontWeight": "bold",
+                                    "messageKey": "elmPartiallyObscuring",
+                                    "expectedContrastRatio": "4.5:1"
+                                },
+                                "relatedNodes": [],
+                                "impact": "serious",
+                                "message": "Element's background color could not be determined because it partially overlaps other elements"
+                            }
+                        ],
+                        "all": [],
+                        "none": [],
+                        "impact": "serious",
+                        "html": "<span class=\"logly-lift-ad-title\">世界一給料が高い町工場を作る。社長と社員の「普段の会話」が本質すぎた</span>",
+                        "target": [
+                            ".logly-lift-ad:nth-child(4) > div　class\\=\\\"logly-lift-ad-content\\\" > .logly-lift-ad-link[rel=\"nofollow noopener\"][target=\"_blank\"] > .logly-lift-ad-title"
+                        ],
+                        "failureSummary": "Fix any of the following:\n  Element's background color could not be determined because it partially overlaps other elements"
+                    },
+                    {
+                        "any": [
+                            {
+                                "id": "color-contrast",
+                                "data": {
+                                    "contrastRatio": 0,
+                                    "fontSize": "12.0pt (16px)",
+                                    "fontWeight": "bold",
+                                    "messageKey": "elmPartiallyObscuring",
+                                    "expectedContrastRatio": "4.5:1"
+                                },
+                                "relatedNodes": [],
+                                "impact": "serious",
+                                "message": "Element's background color could not be determined because it partially overlaps other elements"
+                            }
+                        ],
+                        "all": [],
+                        "none": [],
+                        "impact": "serious",
+                        "html": "<span class=\"logly-lift-ad-title\">複雑化する負荷分散などの課題にどう取り組む？ゲーム業界のデータベース事情</span>",
+                        "target": [
+                            ".logly-lift-ad:nth-child(5) > div　class\\=\\\"logly-lift-ad-content\\\" > .logly-lift-ad-link[rel=\"nofollow noopener\"][target=\"_blank\"] > .logly-lift-ad-title"
+                        ],
+                        "failureSummary": "Fix any of the following:\n  Element's background color could not be determined because it partially overlaps other elements"
+                    }
+                ]
+            },
+            {
+                "id": "frame-title-unique",
+                "impact": "serious",
+                "tags": [
+                    "cat.text-alternatives",
+                    "wcag2a",
+                    "wcag412",
+                    "TTv5",
+                    "TT12.d",
+                    "EN-301-549",
+                    "EN-9.4.1.2"
+                ],
+                "description": "Ensures <iframe> and <frame> elements contain a unique title attribute",
+                "help": "Frames must have a unique title attribute",
+                "helpUrl": "https://dequeuniversity.com/rules/axe/4.8/frame-title-unique?application=axe-puppeteer",
+                "nodes": [
+                    {
+                        "any": [],
+                        "all": [],
+                        "none": [
+                            {
+                                "id": "unique-frame-title",
+                                "data": "3rd party ad content",
+                                "relatedNodes": [],
+                                "impact": "serious",
+                                "message": "Element's title attribute is not unique"
+                            }
+                        ],
+                        "impact": "serious",
+                        "html": "<iframe frameborder=\"0\" src=\"https://8af0292f54fee8166b7b4aa3482714e7.safeframe.googlesyndication.com/safeframe/1-0-40/html/container.html\" id=\"google_ads_iframe_/383564218/qiita.com_push_0\" title=\"3rd party ad content\" name=\"\" scrolling=\"no\" marginwidth=\"0\" marginheight=\"0\" width=\"0\" height=\"32\" data-is-safeframe=\"true\" sandbox=\"allow-forms allow-popups allow-popups-to-escape-sandbox allow-same-origin allow-scripts allow-top-navigation-by-user-activation\" aria-label=\"Advertisement\" tabindex=\"0\" data-google-container-id=\"1\" data-load-complete=\"true\" style=\"border: 0px; vertical-align: bottom; min-width: 100%;\">",
+                        "target": [
+                            "#google_ads_iframe_\\/383564218\\/qiita\\.com_push_0"
+                        ],
+                        "failureSummary": "Fix all of the following:\n  Element's title attribute is not unique"
+                    },
+                    {
+                        "any": [],
+                        "all": [],
+                        "none": [
+                            {
+                                "id": "unique-frame-title",
+                                "data": "3rd party ad content",
+                                "relatedNodes": [],
+                                "impact": "serious",
+                                "message": "Element's title attribute is not unique"
+                            }
+                        ],
+                        "impact": "serious",
+                        "html": "<iframe id=\"google_ads_iframe_/383564218/qiita.com_items-show_under-article-mobile_0\" name=\"google_ads_iframe_/383564218/qiita.com_items-show_under-article-mobile_0\" title=\"3rd party ad content\" width=\"300\" height=\"250\" scrolling=\"no\" marginwidth=\"0\" marginheight=\"0\" frameborder=\"0\" aria-label=\"Advertisement\" tabindex=\"0\" style=\"border: 0px; vertical-align: bottom;\" data-load-complete=\"true\" data-google-container-id=\"2\">",
+                        "target": [
+                            "#google_ads_iframe_\\/383564218\\/qiita\\.com_items-show_under-article-mobile_0"
+                        ],
+                        "failureSummary": "Fix all of the following:\n  Element's title attribute is not unique"
+                    },
+                    {
+                        "any": [],
+                        "all": [],
+                        "none": [
+                            {
+                                "id": "unique-frame-title",
+                                "data": "3rd party ad content",
+                                "relatedNodes": [],
+                                "impact": "serious",
+                                "message": "Element's title attribute is not unique"
+                            }
+                        ],
+                        "impact": "serious",
+                        "html": "<iframe id=\"google_ads_iframe_/383564218/qiita.com_items-show_under-article-mobile_2_0\" name=\"google_ads_iframe_/383564218/qiita.com_items-show_under-article-mobile_2_0\" title=\"3rd party ad content\" width=\"300\" height=\"250\" scrolling=\"no\" marginwidth=\"0\" marginheight=\"0\" frameborder=\"0\" aria-label=\"Advertisement\" tabindex=\"0\" style=\"border: 0px; vertical-align: bottom;\" data-load-complete=\"true\" data-google-container-id=\"3\">",
+                        "target": [
+                            "#google_ads_iframe_\\/383564218\\/qiita\\.com_items-show_under-article-mobile_2_0"
+                        ],
+                        "failureSummary": "Fix all of the following:\n  Element's title attribute is not unique"
+                    }
+                ]
+            }
+        ],
+        "violations": [
+            {
+                "id": "color-contrast",
+                "impact": "serious",
+                "tags": [
+                    "cat.color",
+                    "wcag2aa",
+                    "wcag143",
+                    "TTv5",
+                    "TT13.c",
+                    "EN-301-549",
+                    "EN-9.1.4.3",
+                    "ACT"
+                ],
+                "description": "Ensures the contrast between foreground and background colors meets WCAG 2 AA minimum contrast ratio thresholds",
+                "help": "Elements must meet minimum color contrast ratio thresholds",
+                "helpUrl": "https://dequeuniversity.com/rules/axe/4.8/color-contrast?application=axe-puppeteer",
+                "nodes": [
+                    {
+                        "any": [
+                            {
+                                "id": "color-contrast",
+                                "data": {
+                                    "fgColor": "#999999",
+                                    "bgColor": "#ffffff",
+                                    "contrastRatio": 2.84,
+                                    "fontSize": "8.3pt (11px)",
+                                    "fontWeight": "normal",
+                                    "messageKey": null,
+                                    "expectedContrastRatio": "4.5:1"
+                                },
+                                "relatedNodes": [
+                                    {
+                                        "html": "<div class=\"style-nxr1bw\">",
+                                        "target": [
+                                            ".style-nxr1bw:nth-child(2)"
+                                        ]
+                                    }
+                                ],
+                                "impact": "serious",
+                                "message": "Element has insufficient color contrast of 2.84 (foreground color: #999999, background color: #ffffff, font size: 8.3pt (11px), font weight: normal). Expected contrast ratio of 4.5:1"
+                            }
+                        ],
+                        "all": [],
+                        "none": [],
+                        "impact": "serious",
+                        "html": "<a href=\"https://www.logly.co.jp/privacy.html\" target=\"_top\" rel=\"nofollow noopener\">Recommended by <span class=\"logly-lift-credit-logo\" title=\"logly\"></span></a>",
+                        "target": [
+                            "a[rel=\"nofollow noopener\"][target=\"_top\"]"
+                        ],
+                        "failureSummary": "Fix any of the following:\n  Element has insufficient color contrast of 2.84 (foreground color: #999999, background color: #ffffff, font size: 8.3pt (11px), font weight: normal). Expected contrast ratio of 4.5:1"
+                    },
+                    {
+                        "any": [
+                            {
+                                "id": "color-contrast",
+                                "data": {
+                                    "fgColor": "#9c9e9e",
+                                    "bgColor": "#ffffff",
+                                    "contrastRatio": 2.69,
+                                    "fontSize": "10.5pt (14px)",
+                                    "fontWeight": "normal",
+                                    "messageKey": null,
+                                    "expectedContrastRatio": "4.5:1"
+                                },
+                                "relatedNodes": [
+                                    {
+                                        "html": "<div class=\"style-nxr1bw\">",
+                                        "target": [
+                                            ".style-nxr1bw:nth-child(2)"
+                                        ]
+                                    }
+                                ],
+                                "impact": "serious",
+                                "message": "Element has insufficient color contrast of 2.69 (foreground color: #9c9e9e, background color: #ffffff, font size: 10.5pt (14px), font weight: normal). Expected contrast ratio of 4.5:1"
+                            }
+                        ],
+                        "all": [],
+                        "none": [],
+                        "impact": "serious",
+                        "html": "<span class=\"logly-lift-ad-author\">by toshihirock</span>",
+                        "target": [
+                            "#logly-lift-widget-content > .logly-lift-ad > div　class\\=\\\"logly-lift-ad-content\\\" > .logly-lift-ad-author"
+                        ],
+                        "failureSummary": "Fix any of the following:\n  Element has insufficient color contrast of 2.69 (foreground color: #9c9e9e, background color: #ffffff, font size: 10.5pt (14px), font weight: normal). Expected contrast ratio of 4.5:1"
+                    },
+                    {
+                        "any": [
+                            {
+                                "id": "color-contrast",
+                                "data": {
+                                    "fgColor": "#9c9e9e",
+                                    "bgColor": "#ffffff",
+                                    "contrastRatio": 2.69,
+                                    "fontSize": "10.5pt (14px)",
+                                    "fontWeight": "normal",
+                                    "messageKey": null,
+                                    "expectedContrastRatio": "4.5:1"
+                                },
+                                "relatedNodes": [
+                                    {
+                                        "html": "<div class=\"style-nxr1bw\">",
+                                        "target": [
+                                            ".style-nxr1bw:nth-child(2)"
+                                        ]
+                                    }
+                                ],
+                                "impact": "serious",
+                                "message": "Element has insufficient color contrast of 2.69 (foreground color: #9c9e9e, background color: #ffffff, font size: 10.5pt (14px), font weight: normal). Expected contrast ratio of 4.5:1"
+                            }
+                        ],
+                        "all": [],
+                        "none": [],
+                        "impact": "serious",
+                        "html": "<span class=\"logly-lift-ad-author\">by toshihirock</span>",
+                        "target": [
+                            "#logly-lift-widget > .logly-lift-ad > div　class\\=\\\"logly-lift-ad-content\\\" > .logly-lift-ad-author"
+                        ],
+                        "failureSummary": "Fix any of the following:\n  Element has insufficient color contrast of 2.69 (foreground color: #9c9e9e, background color: #ffffff, font size: 10.5pt (14px), font weight: normal). Expected contrast ratio of 4.5:1"
+                    },
+                    {
+                        "any": [
+                            {
+                                "id": "color-contrast",
+                                "data": {
+                                    "fgColor": "#9c9e9e",
+                                    "bgColor": "#ffffff",
+                                    "contrastRatio": 2.69,
+                                    "fontSize": "10.5pt (14px)",
+                                    "fontWeight": "normal",
+                                    "messageKey": null,
+                                    "expectedContrastRatio": "4.5:1"
+                                },
+                                "relatedNodes": [
+                                    {
+                                        "html": "<div class=\"style-nxr1bw\">",
+                                        "target": [
+                                            ".style-nxr1bw:nth-child(2)"
+                                        ]
+                                    }
+                                ],
+                                "impact": "serious",
+                                "message": "Element has insufficient color contrast of 2.69 (foreground color: #9c9e9e, background color: #ffffff, font size: 10.5pt (14px), font weight: normal). Expected contrast ratio of 4.5:1"
+                            }
+                        ],
+                        "all": [],
+                        "none": [],
+                        "impact": "serious",
+                        "html": "<span class=\"logly-lift-ad-author\">by KuwaK</span>",
+                        "target": [
+                            ".logly-lift-ad:nth-child(2) > div　class\\=\\\"logly-lift-ad-content\\\" > .logly-lift-ad-author"
+                        ],
+                        "failureSummary": "Fix any of the following:\n  Element has insufficient color contrast of 2.69 (foreground color: #9c9e9e, background color: #ffffff, font size: 10.5pt (14px), font weight: normal). Expected contrast ratio of 4.5:1"
+                    },
+                    {
+                        "any": [
+                            {
+                                "id": "color-contrast",
+                                "data": {
+                                    "fgColor": "#9c9e9e",
+                                    "bgColor": "#ffffff",
+                                    "contrastRatio": 2.69,
+                                    "fontSize": "10.5pt (14px)",
+                                    "fontWeight": "normal",
+                                    "messageKey": null,
+                                    "expectedContrastRatio": "4.5:1"
+                                },
+                                "relatedNodes": [
+                                    {
+                                        "html": "<div class=\"style-nxr1bw\">",
+                                        "target": [
+                                            ".style-nxr1bw:nth-child(2)"
+                                        ]
+                                    }
+                                ],
+                                "impact": "serious",
+                                "message": "Element has insufficient color contrast of 2.69 (foreground color: #9c9e9e, background color: #ffffff, font size: 10.5pt (14px), font weight: normal). Expected contrast ratio of 4.5:1"
+                            }
+                        ],
+                        "all": [],
+                        "none": [],
+                        "impact": "serious",
+                        "html": "<span class=\"logly-lift-ad-author\">by horikeso</span>",
+                        "target": [
+                            "#logly-lift-4279493 > .logly-lift-ad:nth-child(3) > div　class\\=\\\"logly-lift-ad-content\\\" > .logly-lift-ad-author"
+                        ],
+                        "failureSummary": "Fix any of the following:\n  Element has insufficient color contrast of 2.69 (foreground color: #9c9e9e, background color: #ffffff, font size: 10.5pt (14px), font weight: normal). Expected contrast ratio of 4.5:1"
+                    },
+                    {
+                        "any": [
+                            {
+                                "id": "color-contrast",
+                                "data": {
+                                    "fgColor": "#9c9e9e",
+                                    "bgColor": "#ffffff",
+                                    "contrastRatio": 2.69,
+                                    "fontSize": "10.5pt (14px)",
+                                    "fontWeight": "normal",
+                                    "messageKey": null,
+                                    "expectedContrastRatio": "4.5:1"
+                                },
+                                "relatedNodes": [
+                                    {
+                                        "html": "<div class=\"style-nxr1bw\">",
+                                        "target": [
+                                            ".style-nxr1bw:nth-child(2)"
+                                        ]
+                                    }
+                                ],
+                                "impact": "serious",
+                                "message": "Element has insufficient color contrast of 2.69 (foreground color: #9c9e9e, background color: #ffffff, font size: 10.5pt (14px), font weight: normal). Expected contrast ratio of 4.5:1"
+                            }
+                        ],
+                        "all": [],
+                        "none": [],
+                        "impact": "serious",
+                        "html": "<span class=\"logly-lift-ad-adv\">PR ビズヒント</span>",
+                        "target": [
+                            ".logly-lift-ad:nth-child(4) > div　class\\=\\\"logly-lift-ad-content\\\" > .logly-lift-ad-adv"
+                        ],
+                        "failureSummary": "Fix any of the following:\n  Element has insufficient color contrast of 2.69 (foreground color: #9c9e9e, background color: #ffffff, font size: 10.5pt (14px), font weight: normal). Expected contrast ratio of 4.5:1"
+                    },
+                    {
+                        "any": [
+                            {
+                                "id": "color-contrast",
+                                "data": {
+                                    "fgColor": "#9c9e9e",
+                                    "bgColor": "#ffffff",
+                                    "contrastRatio": 2.69,
+                                    "fontSize": "10.5pt (14px)",
+                                    "fontWeight": "normal",
+                                    "messageKey": null,
+                                    "expectedContrastRatio": "4.5:1"
+                                },
+                                "relatedNodes": [
+                                    {
+                                        "html": "<div class=\"style-nxr1bw\">",
+                                        "target": [
+                                            ".style-nxr1bw:nth-child(2)"
+                                        ]
+                                    }
+                                ],
+                                "impact": "serious",
+                                "message": "Element has insufficient color contrast of 2.69 (foreground color: #9c9e9e, background color: #ffffff, font size: 10.5pt (14px), font weight: normal). Expected contrast ratio of 4.5:1"
+                            }
+                        ],
+                        "all": [],
+                        "none": [],
+                        "impact": "serious",
+                        "html": "<span class=\"logly-lift-ad-adv\">PR PingCAP株式会社</span>",
+                        "target": [
+                            ".logly-lift-ad:nth-child(5) > div　class\\=\\\"logly-lift-ad-content\\\" > .logly-lift-ad-adv"
+                        ],
+                        "failureSummary": "Fix any of the following:\n  Element has insufficient color contrast of 2.69 (foreground color: #9c9e9e, background color: #ffffff, font size: 10.5pt (14px), font weight: normal). Expected contrast ratio of 4.5:1"
+                    }
+                ]
+            },
+            {
+                "id": "heading-order",
+                "impact": "moderate",
+                "tags": [
+                    "cat.semantics",
+                    "best-practice"
+                ],
+                "description": "Ensures the order of headings is semantically correct",
+                "help": "Heading levels should only increase by one",
+                "helpUrl": "https://dequeuniversity.com/rules/axe/4.8/heading-order?application=axe-puppeteer",
+                "nodes": [
+                    {
+                        "any": [
+                            {
+                                "id": "heading-order",
+                                "data": null,
+                                "relatedNodes": [],
+                                "impact": "moderate",
+                                "message": "Heading order invalid"
+                            }
+                        ],
+                        "all": [],
+                        "none": [],
+                        "impact": "moderate",
+                        "html": "<h3 class=\"style-mrw1i5\">いいね以上の気持ちはコメントで</h3>",
+                        "target": [
+                            ".style-mrw1i5"
+                        ],
+                        "failureSummary": "Fix any of the following:\n  Heading order invalid"
+                    }
+                ]
+            },
+            {
+                "id": "image-alt",
+                "impact": "critical",
+                "tags": [
+                    "cat.text-alternatives",
+                    "wcag2a",
+                    "wcag111",
+                    "section508",
+                    "section508.22.a",
+                    "TTv5",
+                    "TT7.a",
+                    "TT7.b",
+                    "EN-301-549",
+                    "EN-9.1.1.1",
+                    "ACT"
+                ],
+                "description": "Ensures <img> elements have alternate text or a role of none or presentation",
+                "help": "Images must have alternate text",
+                "helpUrl": "https://dequeuniversity.com/rules/axe/4.8/image-alt?application=axe-puppeteer",
+                "nodes": [
+                    {
+                        "any": [
+                            {
+                                "id": "has-alt",
+                                "data": null,
+                                "relatedNodes": [],
+                                "impact": "critical",
+                                "message": "Element does not have an alt attribute"
+                            },
+                            {
+                                "id": "aria-label",
+                                "data": null,
+                                "relatedNodes": [],
+                                "impact": "critical",
+                                "message": "aria-label attribute does not exist or is empty"
+                            },
+                            {
+                                "id": "aria-labelledby",
+                                "data": null,
+                                "relatedNodes": [],
+                                "impact": "critical",
+                                "message": "aria-labelledby attribute does not exist, references elements that do not exist or references elements that are empty"
+                            },
+                            {
+                                "id": "non-empty-title",
+                                "data": {
+                                    "messageKey": "noAttr"
+                                },
+                                "relatedNodes": [],
+                                "impact": "critical",
+                                "message": "Element has no title attribute"
+                            },
+                            {
+                                "id": "presentational-role",
+                                "data": null,
+                                "relatedNodes": [],
+                                "impact": "critical",
+                                "message": "Element's default semantics were not overridden with role=\"none\" or role=\"presentation\""
+                            }
+                        ],
+                        "all": [],
+                        "none": [],
+                        "impact": "critical",
+                        "html": "<img height=\"24\" loading=\"lazy\" src=\"https://qiita-user-profile-images.imgix.net/https%3A%2F%2Fqiita-image-store.s3.amazonaws.com%2F0%2F102182%2Fprofile-images%2F1473708619?ixlib=rb-4.0.0&amp;auto=compress%2Cformat&amp;lossless=0&amp;w=48&amp;s=1ce85b9b0c03c3aa48e7ed838ece3203\" width=\"24\" class=\"style-1wqqt93\">",
+                        "target": [
+                            ".style-1wqqt93"
+                        ],
+                        "failureSummary": "Fix any of the following:\n  Element does not have an alt attribute\n  aria-label attribute does not exist or is empty\n  aria-labelledby attribute does not exist, references elements that do not exist or references elements that are empty\n  Element has no title attribute\n  Element's default semantics were not overridden with role=\"none\" or role=\"presentation\""
+                    },
+                    {
+                        "any": [
+                            {
+                                "id": "has-alt",
+                                "data": null,
+                                "relatedNodes": [],
+                                "impact": "critical",
+                                "message": "Element does not have an alt attribute"
+                            },
+                            {
+                                "id": "aria-label",
+                                "data": null,
+                                "relatedNodes": [],
+                                "impact": "critical",
+                                "message": "aria-label attribute does not exist or is empty"
+                            },
+                            {
+                                "id": "aria-labelledby",
+                                "data": null,
+                                "relatedNodes": [],
+                                "impact": "critical",
+                                "message": "aria-labelledby attribute does not exist, references elements that do not exist or references elements that are empty"
+                            },
+                            {
+                                "id": "non-empty-title",
+                                "data": {
+                                    "messageKey": "noAttr"
+                                },
+                                "relatedNodes": [],
+                                "impact": "critical",
+                                "message": "Element has no title attribute"
+                            },
+                            {
+                                "id": "presentational-role",
+                                "data": null,
+                                "relatedNodes": [],
+                                "impact": "critical",
+                                "message": "Element's default semantics were not overridden with role=\"none\" or role=\"presentation\""
+                            }
+                        ],
+                        "all": [],
+                        "none": [],
+                        "impact": "critical",
+                        "html": "<img src=\"//cdn.logly.co.jp/recommend/qiita-image-store.s3.amazonaws.com/3c581f5736dbdce53529b6cdfa0c22d1.webp?1709341806&amp;oe=jpeg\" width=\"18\">",
+                        "target": [
+                            "#logly-lift-widget-content > .logly-lift-ad > .logly-lift-ad-icon > img[width=\"18\"]"
+                        ],
+                        "failureSummary": "Fix any of the following:\n  Element does not have an alt attribute\n  aria-label attribute does not exist or is empty\n  aria-labelledby attribute does not exist, references elements that do not exist or references elements that are empty\n  Element has no title attribute\n  Element's default semantics were not overridden with role=\"none\" or role=\"presentation\""
+                    },
+                    {
+                        "any": [
+                            {
+                                "id": "has-alt",
+                                "data": null,
+                                "relatedNodes": [],
+                                "impact": "critical",
+                                "message": "Element does not have an alt attribute"
+                            },
+                            {
+                                "id": "aria-label",
+                                "data": null,
+                                "relatedNodes": [],
+                                "impact": "critical",
+                                "message": "aria-label attribute does not exist or is empty"
+                            },
+                            {
+                                "id": "aria-labelledby",
+                                "data": null,
+                                "relatedNodes": [],
+                                "impact": "critical",
+                                "message": "aria-labelledby attribute does not exist, references elements that do not exist or references elements that are empty"
+                            },
+                            {
+                                "id": "non-empty-title",
+                                "data": {
+                                    "messageKey": "noAttr"
+                                },
+                                "relatedNodes": [],
+                                "impact": "critical",
+                                "message": "Element has no title attribute"
+                            },
+                            {
+                                "id": "presentational-role",
+                                "data": null,
+                                "relatedNodes": [],
+                                "impact": "critical",
+                                "message": "Element's default semantics were not overridden with role=\"none\" or role=\"presentation\""
+                            }
+                        ],
+                        "all": [],
+                        "none": [],
+                        "impact": "critical",
+                        "html": "<img src=\"//cdn.logly.co.jp/recommend/qiita-image-store.s3.amazonaws.com/3c581f5736dbdce53529b6cdfa0c22d1.webp?1709341804&amp;oe=jpeg\" width=\"18\">",
+                        "target": [
+                            "#logly-lift-widget > .logly-lift-ad > .logly-lift-ad-icon > img[width=\"18\"]"
+                        ],
+                        "failureSummary": "Fix any of the following:\n  Element does not have an alt attribute\n  aria-label attribute does not exist or is empty\n  aria-labelledby attribute does not exist, references elements that do not exist or references elements that are empty\n  Element has no title attribute\n  Element's default semantics were not overridden with role=\"none\" or role=\"presentation\""
+                    },
+                    {
+                        "any": [
+                            {
+                                "id": "has-alt",
+                                "data": null,
+                                "relatedNodes": [],
+                                "impact": "critical",
+                                "message": "Element does not have an alt attribute"
+                            },
+                            {
+                                "id": "aria-label",
+                                "data": null,
+                                "relatedNodes": [],
+                                "impact": "critical",
+                                "message": "aria-label attribute does not exist or is empty"
+                            },
+                            {
+                                "id": "aria-labelledby",
+                                "data": null,
+                                "relatedNodes": [],
+                                "impact": "critical",
+                                "message": "aria-labelledby attribute does not exist, references elements that do not exist or references elements that are empty"
+                            },
+                            {
+                                "id": "non-empty-title",
+                                "data": {
+                                    "messageKey": "noAttr"
+                                },
+                                "relatedNodes": [],
+                                "impact": "critical",
+                                "message": "Element has no title attribute"
+                            },
+                            {
+                                "id": "presentational-role",
+                                "data": null,
+                                "relatedNodes": [],
+                                "impact": "critical",
+                                "message": "Element's default semantics were not overridden with role=\"none\" or role=\"presentation\""
+                            }
+                        ],
+                        "all": [],
+                        "none": [],
+                        "impact": "critical",
+                        "html": "<img src=\"//cdn.logly.co.jp/recommend/qiita-image-store.s3.amazonaws.com/f2d030f60ee94e9a4cb85edbda4f4d7d.webp?1709263826&amp;oe=png\" width=\"18\">",
+                        "target": [
+                            ".logly-lift-ad:nth-child(2) > .logly-lift-ad-icon > img[width=\"18\"]"
+                        ],
+                        "failureSummary": "Fix any of the following:\n  Element does not have an alt attribute\n  aria-label attribute does not exist or is empty\n  aria-labelledby attribute does not exist, references elements that do not exist or references elements that are empty\n  Element has no title attribute\n  Element's default semantics were not overridden with role=\"none\" or role=\"presentation\""
+                    },
+                    {
+                        "any": [
+                            {
+                                "id": "has-alt",
+                                "data": null,
+                                "relatedNodes": [],
+                                "impact": "critical",
+                                "message": "Element does not have an alt attribute"
+                            },
+                            {
+                                "id": "aria-label",
+                                "data": null,
+                                "relatedNodes": [],
+                                "impact": "critical",
+                                "message": "aria-label attribute does not exist or is empty"
+                            },
+                            {
+                                "id": "aria-labelledby",
+                                "data": null,
+                                "relatedNodes": [],
+                                "impact": "critical",
+                                "message": "aria-labelledby attribute does not exist, references elements that do not exist or references elements that are empty"
+                            },
+                            {
+                                "id": "non-empty-title",
+                                "data": {
+                                    "messageKey": "noAttr"
+                                },
+                                "relatedNodes": [],
+                                "impact": "critical",
+                                "message": "Element has no title attribute"
+                            },
+                            {
+                                "id": "presentational-role",
+                                "data": null,
+                                "relatedNodes": [],
+                                "impact": "critical",
+                                "message": "Element's default semantics were not overridden with role=\"none\" or role=\"presentation\""
+                            }
+                        ],
+                        "all": [],
+                        "none": [],
+                        "impact": "critical",
+                        "html": "<img src=\"//cdn.logly.co.jp/recommend/s3-ap-northeast-1.amazonaws.com/cfe5e8bd66484ceaafe49894718e1ab4.webp?1709235949&amp;oe=png\" width=\"18\">",
+                        "target": [
+                            "#logly-lift-4279493 > .logly-lift-ad:nth-child(3) > .logly-lift-ad-icon > img[width=\"18\"]"
+                        ],
+                        "failureSummary": "Fix any of the following:\n  Element does not have an alt attribute\n  aria-label attribute does not exist or is empty\n  aria-labelledby attribute does not exist, references elements that do not exist or references elements that are empty\n  Element has no title attribute\n  Element's default semantics were not overridden with role=\"none\" or role=\"presentation\""
+                    }
+                ]
+            },
+            {
+                "id": "landmark-unique",
+                "impact": "moderate",
+                "tags": [
+                    "cat.semantics",
+                    "best-practice"
+                ],
+                "help": "Ensures landmarks are unique",
+                "description": "Landmarks should have a unique role or role/label/title (i.e. accessible name) combination",
+                "helpUrl": "https://dequeuniversity.com/rules/axe/4.8/landmark-unique?application=axe-puppeteer",
+                "nodes": [
+                    {
+                        "any": [
+                            {
+                                "id": "landmark-is-unique",
+                                "data": {
+                                    "role": "navigation",
+                                    "accessibleText": null
+                                },
+                                "relatedNodes": [
+                                    {
+                                        "html": "<nav class=\"st-footer_navigation\">",
+                                        "target": [
+                                            ".st-footer_navigation"
+                                        ]
+                                    }
+                                ],
+                                "impact": "moderate",
+                                "message": "The landmark must have a unique aria-label, aria-labelledby, or title to make landmarks distinguishable"
+                            }
+                        ],
+                        "all": [],
+                        "none": [],
+                        "impact": "moderate",
+                        "html": "<nav class=\"style-1wc0yei\">",
+                        "target": [
+                            ".style-1wc0yei"
+                        ],
+                        "failureSummary": "Fix any of the following:\n  The landmark must have a unique aria-label, aria-labelledby, or title to make landmarks distinguishable"
+                    }
+                ]
+            },
+            {
+                "id": "link-name",
+                "impact": "serious",
+                "tags": [
+                    "cat.name-role-value",
+                    "wcag2a",
+                    "wcag244",
+                    "wcag412",
+                    "section508",
+                    "section508.22.a",
+                    "TTv5",
+                    "TT6.a",
+                    "EN-301-549",
+                    "EN-9.2.4.4",
+                    "EN-9.4.1.2",
+                    "ACT"
+                ],
+                "description": "Ensures links have discernible text",
+                "help": "Links must have discernible text",
+                "helpUrl": "https://dequeuniversity.com/rules/axe/4.8/link-name?application=axe-puppeteer",
+                "nodes": [
+                    {
+                        "any": [
+                            {
+                                "id": "has-visible-text",
+                                "data": null,
+                                "relatedNodes": [],
+                                "impact": "serious",
+                                "message": "Element does not have text that is visible to screen readers"
+                            },
+                            {
+                                "id": "aria-label",
+                                "data": null,
+                                "relatedNodes": [],
+                                "impact": "serious",
+                                "message": "aria-label attribute does not exist or is empty"
+                            },
+                            {
+                                "id": "aria-labelledby",
+                                "data": null,
+                                "relatedNodes": [],
+                                "impact": "serious",
+                                "message": "aria-labelledby attribute does not exist, references elements that do not exist or references elements that are empty"
+                            },
+                            {
+                                "id": "non-empty-title",
+                                "data": {
+                                    "messageKey": "noAttr"
+                                },
+                                "relatedNodes": [],
+                                "impact": "serious",
+                                "message": "Element has no title attribute"
+                            }
+                        ],
+                        "all": [],
+                        "none": [
+                            {
+                                "id": "focusable-no-name",
+                                "data": null,
+                                "relatedNodes": [],
+                                "impact": "serious",
+                                "message": "Element is in tab order and does not have accessible text"
+                            }
+                        ],
+                        "impact": "serious",
+                        "html": "<a href=\"#promiseall\"><i class=\"fa fa-link\"></i></a>",
+                        "target": [
+                            "h1[data-sourcepos=\"5:1-5:13\"] > a[href$=\"#promiseall\"]"
+                        ],
+                        "failureSummary": "Fix all of the following:\n  Element is in tab order and does not have accessible text\n\nFix any of the following:\n  Element does not have text that is visible to screen readers\n  aria-label attribute does not exist or is empty\n  aria-labelledby attribute does not exist, references elements that do not exist or references elements that are empty\n  Element has no title attribute"
+                    },
+                    {
+                        "any": [
+                            {
+                                "id": "has-visible-text",
+                                "data": null,
+                                "relatedNodes": [],
+                                "impact": "serious",
+                                "message": "Element does not have text that is visible to screen readers"
+                            },
+                            {
+                                "id": "aria-label",
+                                "data": null,
+                                "relatedNodes": [],
+                                "impact": "serious",
+                                "message": "aria-label attribute does not exist or is empty"
+                            },
+                            {
+                                "id": "aria-labelledby",
+                                "data": null,
+                                "relatedNodes": [],
+                                "impact": "serious",
+                                "message": "aria-labelledby attribute does not exist, references elements that do not exist or references elements that are empty"
+                            },
+                            {
+                                "id": "non-empty-title",
+                                "data": {
+                                    "messageKey": "noAttr"
+                                },
+                                "relatedNodes": [],
+                                "impact": "serious",
+                                "message": "Element has no title attribute"
+                            }
+                        ],
+                        "all": [],
+                        "none": [
+                            {
+                                "id": "focusable-no-name",
+                                "data": null,
+                                "relatedNodes": [],
+                                "impact": "serious",
+                                "message": "Element is in tab order and does not have accessible text"
+                            }
+                        ],
+                        "impact": "serious",
+                        "html": "<a href=\"#%E8%A4%87%E6%95%B0%E3%81%AE%E9%9D%9E%E5%90%8C%E6%9C%9F%E5%87%A6%E7%90%86%E3%81%AE%E7%B5%90%E6%9E%9C%E3%82%92%E4%BD%BF%E3%81%84%E3%81%9F%E3%81%84%E5%A0%B4%E5%90%88%E3%81%AEpromiseall\"><i class=\"fa fa-link\"></i></a>",
+                        "target": [
+                            "h1[data-sourcepos=\"37:1-37:70\"] > a"
+                        ],
+                        "failureSummary": "Fix all of the following:\n  Element is in tab order and does not have accessible text\n\nFix any of the following:\n  Element does not have text that is visible to screen readers\n  aria-label attribute does not exist or is empty\n  aria-labelledby attribute does not exist, references elements that do not exist or references elements that are empty\n  Element has no title attribute"
+                    },
+                    {
+                        "any": [
+                            {
+                                "id": "has-visible-text",
+                                "data": null,
+                                "relatedNodes": [],
+                                "impact": "serious",
+                                "message": "Element does not have text that is visible to screen readers"
+                            },
+                            {
+                                "id": "aria-label",
+                                "data": null,
+                                "relatedNodes": [],
+                                "impact": "serious",
+                                "message": "aria-label attribute does not exist or is empty"
+                            },
+                            {
+                                "id": "aria-labelledby",
+                                "data": null,
+                                "relatedNodes": [],
+                                "impact": "serious",
+                                "message": "aria-labelledby attribute does not exist, references elements that do not exist or references elements that are empty"
+                            },
+                            {
+                                "id": "non-empty-title",
+                                "data": {
+                                    "messageKey": "noAttr"
+                                },
+                                "relatedNodes": [],
+                                "impact": "serious",
+                                "message": "Element has no title attribute"
+                            }
+                        ],
+                        "all": [],
+                        "none": [
+                            {
+                                "id": "focusable-no-name",
+                                "data": null,
+                                "relatedNodes": [],
+                                "impact": "serious",
+                                "message": "Element is in tab order and does not have accessible text"
+                            }
+                        ],
+                        "impact": "serious",
+                        "html": "<a href=\"#%E3%81%BE%E3%81%A8%E3%82%81\"><i class=\"fa fa-link\"></i></a>",
+                        "target": [
+                            "h1[data-sourcepos=\"115:1-115:11\"] > a[href=\"#%E3%81%BE%E3%81%A8%E3%82%81\"]"
+                        ],
+                        "failureSummary": "Fix all of the following:\n  Element is in tab order and does not have accessible text\n\nFix any of the following:\n  Element does not have text that is visible to screen readers\n  aria-label attribute does not exist or is empty\n  aria-labelledby attribute does not exist, references elements that do not exist or references elements that are empty\n  Element has no title attribute"
+                    },
+                    {
+                        "any": [
+                            {
+                                "id": "has-visible-text",
+                                "data": null,
+                                "relatedNodes": [],
+                                "impact": "serious",
+                                "message": "Element does not have text that is visible to screen readers"
+                            },
+                            {
+                                "id": "aria-label",
+                                "data": null,
+                                "relatedNodes": [],
+                                "impact": "serious",
+                                "message": "aria-label attribute does not exist or is empty"
+                            },
+                            {
+                                "id": "aria-labelledby",
+                                "data": null,
+                                "relatedNodes": [],
+                                "impact": "serious",
+                                "message": "aria-labelledby attribute does not exist, references elements that do not exist or references elements that are empty"
+                            },
+                            {
+                                "id": "non-empty-title",
+                                "data": {
+                                    "messageKey": "noAttr"
+                                },
+                                "relatedNodes": [],
+                                "impact": "serious",
+                                "message": "Element has no title attribute"
+                            }
+                        ],
+                        "all": [],
+                        "none": [
+                            {
+                                "id": "focusable-no-name",
+                                "data": null,
+                                "relatedNodes": [],
+                                "impact": "serious",
+                                "message": "Element is in tab order and does not have accessible text"
+                            }
+                        ],
+                        "impact": "serious",
+                        "html": "<a id=\"aw0\" target=\"_blank\" href=\"https://googleads.g.doubleclick.net/pcs/click?xai=AKAOjsvhrlnTeA-zHZL_YHpmxCyrrDvphpa8vTLRd9ESa3qaGYq-2Q2Fj0fxiesFH8OP6Hv_A0EUClciO7A6OzkBFDBSEUiivnoP3gXHRvgEvEuxqAUntI_HgU1z0fmPqPhTM5--vkqzGfvM0OTVrRPti2iFCwVFRMiZRNcIed3lEWnDFtIEDVoBy9bTBxluRLNA1rnUl1QF-Y7WjbcMkMQEhxewo68ZfJlISCi-sRx1J-jYl4nd4T-HW-TNo2MvMg3VLWW473uKgBodpHdT0ZjEn_9wYErXwZDbWK36JDZwocbZ_pquGwwpJFYeGDocbqVyW3ykGw-sd2CbfjeEsaQWOUZl_mKXKjrUJGGc3x5Z8f9BSHLfU73YaP5QdazWqhC09XyEnrswsWK7GCG4vbBBYbr4_CYIq_RBFSFf&amp;sai=AMfl-YTmzeG3-ViD3XI7zYn-xtWJbF7uMqPk4sYFHHmBYPZemUt6FZupFY6hsj5aRe0EXrXnzZXX7LunTI3W8hx0C_PeNKF18R3qy7YOnA&amp;sig=Cg0ArKJSzFP6c91GjdNd&amp;fbs_aeid=%5Bgw_fbsaeid%5D&amp;adurl=https://zine.qiita.com/event/202401-pingcap/%3Futm_source%3Dqiita%26utm_medium%3Dbanner\" onfocus=\"ss('aw0')\" onmousedown=\"st('aw0')\" onmouseover=\"ss('aw0')\" onclick=\"ha('aw0')\">",
+                        "target": [
+                            "#google_ads_iframe_\\/383564218\\/qiita\\.com_items-show_under-article-mobile_0",
+                            "#aw0"
+                        ],
+                        "failureSummary": "Fix all of the following:\n  Element is in tab order and does not have accessible text\n\nFix any of the following:\n  Element does not have text that is visible to screen readers\n  aria-label attribute does not exist or is empty\n  aria-labelledby attribute does not exist, references elements that do not exist or references elements that are empty\n  Element has no title attribute"
+                    },
+                    {
+                        "any": [
+                            {
+                                "id": "has-visible-text",
+                                "data": null,
+                                "relatedNodes": [],
+                                "impact": "serious",
+                                "message": "Element does not have text that is visible to screen readers"
+                            },
+                            {
+                                "id": "aria-label",
+                                "data": null,
+                                "relatedNodes": [],
+                                "impact": "serious",
+                                "message": "aria-label attribute does not exist or is empty"
+                            },
+                            {
+                                "id": "aria-labelledby",
+                                "data": null,
+                                "relatedNodes": [],
+                                "impact": "serious",
+                                "message": "aria-labelledby attribute does not exist, references elements that do not exist or references elements that are empty"
+                            },
+                            {
+                                "id": "non-empty-title",
+                                "data": {
+                                    "messageKey": "noAttr"
+                                },
+                                "relatedNodes": [],
+                                "impact": "serious",
+                                "message": "Element has no title attribute"
+                            }
+                        ],
+                        "all": [],
+                        "none": [
+                            {
+                                "id": "focusable-no-name",
+                                "data": null,
+                                "relatedNodes": [],
+                                "impact": "serious",
+                                "message": "Element is in tab order and does not have accessible text"
+                            }
+                        ],
+                        "impact": "serious",
+                        "html": "<a id=\"aw0\" target=\"_blank\" href=\"https://googleads.g.doubleclick.net/pcs/click?xai=AKAOjstKsgOCCPBEsuVynz2_UkpZ3MQR9rZm4ivmdcFe7gFNV_ZUV0LQwfmpYssMC6_l0JPIkBr7iXA6RqWVZwUpigAW6rdbw3zvaAnzQ3k9ZUf0v9gxepRmTs6ystbdrPummAI2NcYf5__mdvEiTCLo2PBO8FibNkO6MJQ8voJ0fj8utnXyGRT2KlN-BlXFYV2Xp3nHWT5sF_gG5uTcjmKITsMwEq3zmI0c5-y0sVTOuel3-oJLKDH1PxUJ8rVHeeDR27OYN7mawi0pje5zDWTZsUsa3VdEcE2NUPI5XZgOWBxmO_QCf7FwYPu8ZrT0n3fbR0Li3AMHfduxDUin0xXFritw8tSfdyGnnqvKyKBbZ7Vkh2MtahSXVr0zoQVxEjsqdD-ikeRdVk7ZNz6Ptm9-EhaWLa-k2yQWDMKimmw&amp;sai=AMfl-YRKIFC-1yG7Dfo2Hh6Ck7UP28HII6DTddsnELGzPqFOeukHLkZZotqtJcjoZLoiitoisNlw-nl96glVSzvvpAvzV43_qVfYO2gRwg&amp;sig=Cg0ArKJSzNdhUAV7Fx8H&amp;fbs_aeid=%5Bgw_fbsaeid%5D&amp;adurl=https://zine.qiita.com/event/202402-pingcap-02/%3Futm_source%3Dqiita%26utm_medium%3Dbanner\" onfocus=\"ss('aw0')\" onmousedown=\"st('aw0')\" onmouseover=\"ss('aw0')\" onclick=\"ha('aw0')\">",
+                        "target": [
+                            "#google_ads_iframe_\\/383564218\\/qiita\\.com_items-show_under-article-mobile_2_0",
+                            "#aw0"
+                        ],
+                        "failureSummary": "Fix all of the following:\n  Element is in tab order and does not have accessible text\n\nFix any of the following:\n  Element does not have text that is visible to screen readers\n  aria-label attribute does not exist or is empty\n  aria-labelledby attribute does not exist, references elements that do not exist or references elements that are empty\n  Element has no title attribute"
+                    }
+                ]
+            },
+            {
+                "id": "region",
+                "impact": "moderate",
+                "tags": [
+                    "cat.keyboard",
+                    "best-practice"
+                ],
+                "description": "Ensures all page content is contained by landmarks",
+                "help": "All page content should be contained by landmarks",
+                "helpUrl": "https://dequeuniversity.com/rules/axe/4.8/region?application=axe-puppeteer",
+                "nodes": [
+                    {
+                        "any": [
+                            {
+                                "id": "region",
+                                "data": {
+                                    "isIframe": false
+                                },
+                                "relatedNodes": [],
+                                "impact": "moderate",
+                                "message": "Some page content is not contained by landmarks"
+                            }
+                        ],
+                        "all": [],
+                        "none": [],
+                        "impact": "moderate",
+                        "html": "<img style=\"display:block;margin:0;padding:0;border:0;outline:0;width:0;height:0;line-height:0;\" alt=\"\" src=\"https://relay-dsp.ad-m.asia/dmp/sync/bizmatrix?pid=c3ed207b574cf11376&amp;d=x18o8hduaj&amp;uid=\">",
+                        "target": [
+                            ".mainWrapper > img[alt=\"\"]"
+                        ],
+                        "failureSummary": "Fix any of the following:\n  Some page content is not contained by landmarks"
+                    },
+                    {
+                        "any": [
+                            {
+                                "id": "region",
+                                "data": {
+                                    "isIframe": false
+                                },
+                                "relatedNodes": [],
+                                "impact": "moderate",
+                                "message": "Some page content is not contained by landmarks"
+                            }
+                        ],
+                        "all": [],
+                        "none": [],
+                        "impact": "moderate",
+                        "html": "<h2 class=\"style-11292d1\">Qiitaにログインして、便利な機能を使ってみませんか？</h2>",
+                        "target": [
+                            ".style-11292d1"
+                        ],
+                        "failureSummary": "Fix any of the following:\n  Some page content is not contained by landmarks"
+                    },
+                    {
+                        "any": [
+                            {
+                                "id": "region",
+                                "data": {
+                                    "isIframe": false
+                                },
+                                "relatedNodes": [],
+                                "impact": "moderate",
+                                "message": "Some page content is not contained by landmarks"
+                            }
+                        ],
+                        "all": [],
+                        "none": [],
+                        "impact": "moderate",
+                        "html": "<div class=\"style-1fhgjcy\">",
+                        "target": [
+                            ".style-1fhgjcy"
+                        ],
+                        "failureSummary": "Fix any of the following:\n  Some page content is not contained by landmarks"
+                    },
+                    {
+                        "any": [
+                            {
+                                "id": "region",
+                                "data": {
+                                    "isIframe": false
+                                },
+                                "relatedNodes": [],
+                                "impact": "moderate",
+                                "message": "Some page content is not contained by landmarks"
+                            }
+                        ],
+                        "all": [],
+                        "none": [],
+                        "impact": "moderate",
+                        "html": "<a href=\"/login?callback_action=login_or_signup&amp;redirect_to=%2Fniisan-tokyo%2Fitems%2F4ec961ee3f163b2dc4e7&amp;realm=qiita\" class=\"style-hmca31\">ログイン</a>",
+                        "target": [
+                            ".style-18s4h56 > .style-hmca31"
+                        ],
+                        "failureSummary": "Fix any of the following:\n  Some page content is not contained by landmarks"
+                    },
+                    {
+                        "any": [
+                            {
+                                "id": "region",
+                                "data": {
+                                    "isIframe": false
+                                },
+                                "relatedNodes": [],
+                                "impact": "moderate",
+                                "message": "Some page content is not contained by landmarks"
+                            }
+                        ],
+                        "all": [],
+                        "none": [],
+                        "impact": "moderate",
+                        "html": "<a href=\"/signup?callback_action=login_or_signup&amp;redirect_to=%2Fniisan-tokyo%2Fitems%2F4ec961ee3f163b2dc4e7&amp;realm=qiita\" class=\"style-c6oozl\">新規登録</a>",
+                        "target": [
+                            ".style-18s4h56 > .style-c6oozl"
+                        ],
+                        "failureSummary": "Fix any of the following:\n  Some page content is not contained by landmarks"
+                    },
+                    {
+                        "any": [
+                            {
+                                "id": "region",
+                                "data": {
+                                    "isIframe": false
+                                },
+                                "relatedNodes": [],
+                                "impact": "moderate",
+                                "message": "Some page content is not contained by landmarks"
+                            }
+                        ],
+                        "all": [],
+                        "none": [],
+                        "impact": "moderate",
+                        "html": "<div class=\"GoogleActiveViewElement\" data-google-av-cxn=\"https://pagead2.googlesyndication.com/pcs/activeview?xai=AKAOjssuKqMHIlo3LSCw6PaFGeUncKLK_wH7TErkis8N1QnhHvYsEIUBVZjcizUM5XqqD9lkZOKtA01gZKR3IsPDuIAxRgm3AHWBzABNAITOBtiELyAt2pMYR2pYnpNv7TwhHMvF21Ds5z6qy0AbztkoiAt-nkoAYAZ5r30&amp;sig=Cg0ArKJSzBlxd3s1ImuPEAE\" data-google-av-adk=\"2412690328\" data-google-av-metadata=\"la=0&amp;xdi=0&amp;\" data-google-av-ufs-integrator-metadata=\"CpoBCkdtb2RlbF9wZXJzb25fY291bnRyeV9jb2RlX0pQX3BlcnNvbl9yZWdpb25fY29kZV80YTUwMmQ0ZDQ5NTk0MTQ3NDkuanNvbhIaQ055WDljdXhfWVFERmVGWER3SWRLMzhGT3cYASIgCNgSEJOhARjpyz0glo2vBCgCMAI4AV0AAIA_YPXoqQQoodie4Pr_____ATCh2J7gAhKHAgr8AWh0dHBzOi8vcGFnZWFkMi5nb29nbGVzeW5kaWNhdGlvbi5jb20vcGNzL2FjdGl2ZXZpZXc_eGFpPUFLQU9qc3N1S3FNSElsbzNMU0N3NlBhRkdlVW5jS0xLX3dIN1RFcmtpczhOMVFuaEh2WXNFSVVCVlpqY2l6VU01WHFxRDlsa1pPS3RBMDFnWktSM0lzUER1SUF4UmdtM0FIV0J6QUJOQUlUT0J0aUVMeUF0MnBNWVIycFlucE52N1R3aEhNdkYyMURzNXo2cXkwQWJ6dGtvaUF0LW5rb0FZQVo1cjMwJnNpZz1DZzBBcktKU3pCbHhkM3MxSW11UEVBRRIAGgAgASgA\" data-google-av-override=\"-1\" data-google-av-dm=\"2\" data-google-av-aid=\"0\" data-google-av-naid=\"1\" data-google-av-slift=\"\" data-google-av-cpmav=\"\" data-google-av-btr=\"https://securepubads.g.doubleclick.net/pcs/view?xai=AKAOjsscq9nER_Ma1Mdd409tmnCAw3pBv9gY1jzJ-w-n0VmRORu8qVFX33z_8Hj1zaPI8_JpeFRZ69_ocQqH44XbQlc-SHYufrQkpOqdlSWjmjrWdlDvqtm9v2R_Q0aZSh4i3aKc9u7v8TB_V1frhhjLBP0Dvo0msNdxZ23r6YlYAiGVh7EKKHDzLkc0XHyLQ9QWaZYOMNJV_LOmPaTrE4PU3YRk_zYpq5BoJm4TxDT0qk4Gr5h4rCinAQ5n4PEdyismvXsYn2N3mny4KtaKyzB8K8vdjPfQq35lHkrp_9la2b5H9oKbv1x214a6T5MXLgEgy5TT37MZ4o_mV7iXfA1N86xhRgF-MpE&amp;sai=AMfl-YR1kr1oITozkroxPC7K9OHamVUqxJT4blTYKnWR-lEpcinMgvtNyYOOro9E_UNXSq8AiHTQFdl_xvl85m3n5PHgOfr8owDyXnLA9A&amp;sig=Cg0ArKJSzA_-qarpzmh4EAE&amp;uach_m=%5BUACH%5D&amp;urlfix=1&amp;adurl=\" data-google-av-itpl=\"7\" data-google-av-rs=\"4\" data-google-av-flags=\"[&quot;x%278440'9efotm(&amp;753374%2bejvf/%27844>",
+                        "target": [
+                            "#google_ads_iframe_\\/383564218\\/qiita\\.com_push_0",
+                            ".GoogleActiveViewElement"
+                        ],
+                        "failureSummary": "Fix any of the following:\n  Some page content is not contained by landmarks"
+                    },
+                    {
+                        "any": [
+                            {
+                                "id": "region",
+                                "data": {
+                                    "isIframe": false
+                                },
+                                "relatedNodes": [],
+                                "impact": "moderate",
+                                "message": "Some page content is not contained by landmarks"
+                            }
+                        ],
+                        "all": [],
+                        "none": [],
+                        "impact": "moderate",
+                        "html": "<a href=\"/niisan-tokyo/items/4ec961ee3f163b2dc4e7/likers\" aria-label=\"5いいね\" class=\"style-klat6i\">5</a>",
+                        "target": [
+                            ".style-klat6i"
+                        ],
+                        "failureSummary": "Fix any of the following:\n  Some page content is not contained by landmarks"
+                    },
+                    {
+                        "any": [
+                            {
+                                "id": "region",
+                                "data": {
+                                    "isIframe": false
+                                },
+                                "relatedNodes": [],
+                                "impact": "moderate",
+                                "message": "Some page content is not contained by landmarks"
+                            }
+                        ],
+                        "all": [],
+                        "none": [],
+                        "impact": "moderate",
+                        "html": "<span class=\"style-5ji4gp\">3</span>",
+                        "target": [
+                            ".style-5ji4gp"
+                        ],
+                        "failureSummary": "Fix any of the following:\n  Some page content is not contained by landmarks"
+                    },
+                    {
+                        "any": [
+                            {
+                                "id": "region",
+                                "data": {
+                                    "isIframe": false
+                                },
+                                "relatedNodes": [],
+                                "impact": "moderate",
+                                "message": "Some page content is not contained by landmarks"
+                            }
+                        ],
+                        "all": [],
+                        "none": [],
+                        "impact": "moderate",
+                        "html": "<a aria-label=\"はてなブックマーク\" class=\"style-1o9h1hg\" href=\"https://b.hatena.ne.jp/entry/s/qiita.com/niisan-tokyo/items/4ec961ee3f163b2dc4e7\" rel=\"noopener noreferrer\" target=\"_blank\" title=\"はてなブックマーク\">",
+                        "target": [
+                            ".style-1o9h1hg"
+                        ],
+                        "failureSummary": "Fix any of the following:\n  Some page content is not contained by landmarks"
+                    },
+                    {
+                        "any": [
+                            {
+                                "id": "region",
+                                "data": {
+                                    "isIframe": false
+                                },
+                                "relatedNodes": [],
+                                "impact": "moderate",
+                                "message": "Some page content is not contained by landmarks"
+                            }
+                        ],
+                        "all": [],
+                        "none": [],
+                        "impact": "moderate",
+                        "html": "<p>この記事は最終更新日から1年以上が経過しています。</p>",
+                        "target": [
+                            ".style-1cpeld6 > p"
+                        ],
+                        "failureSummary": "Fix any of the following:\n  Some page content is not contained by landmarks"
+                    },
+                    {
+                        "any": [
+                            {
+                                "id": "region",
+                                "data": {
+                                    "isIframe": false
+                                },
+                                "relatedNodes": [],
+                                "impact": "moderate",
+                                "message": "Some page content is not contained by landmarks"
+                            }
+                        ],
+                        "all": [],
+                        "none": [],
+                        "impact": "moderate",
+                        "html": "<div class=\"style-8qb8m4\">",
+                        "target": [
+                            ".style-8qb8m4"
+                        ],
+                        "failureSummary": "Fix any of the following:\n  Some page content is not contained by landmarks"
+                    },
+                    {
+                        "any": [
+                            {
+                                "id": "region",
+                                "data": {
+                                    "isIframe": false
+                                },
+                                "relatedNodes": [],
+                                "impact": "moderate",
+                                "message": "Some page content is not contained by landmarks"
+                            }
+                        ],
+                        "all": [],
+                        "none": [],
+                        "impact": "moderate",
+                        "html": "<p data-sourcepos=\"1:1-1:27\">こんにちはみなさん</p>",
+                        "target": [
+                            "p[data-sourcepos=\"1:1-1:27\"]"
+                        ],
+                        "failureSummary": "Fix any of the following:\n  Some page content is not contained by landmarks"
+                    },
+                    {
+                        "any": [
+                            {
+                                "id": "region",
+                                "data": {
+                                    "isIframe": false
+                                },
+                                "relatedNodes": [],
+                                "impact": "moderate",
+                                "message": "Some page content is not contained by landmarks"
+                            }
+                        ],
+                        "all": [],
+                        "none": [],
+                        "impact": "moderate",
+                        "html": "<p data-sourcepos=\"3:1-3:316\">昨日ちょっと<code>Promise.all</code>の挙動で議論があったので、挙動をメモっておこうかなと思いました。まあ、仕様を読み込めばわかるやろ！って話なんだろうけど、手っ取り早くどうなるんだっけ？ってのを思い出すコストがめんどいんです。</p>",
+                        "target": [
+                            "p[data-sourcepos=\"3:1-3:316\"]"
+                        ],
+                        "failureSummary": "Fix any of the following:\n  Some page content is not contained by landmarks"
+                    },
+                    {
+                        "any": [
+                            {
+                                "id": "region",
+                                "data": {
+                                    "isIframe": false
+                                },
+                                "relatedNodes": [],
+                                "impact": "moderate",
+                                "message": "Some page content is not contained by landmarks"
+                            }
+                        ],
+                        "all": [],
+                        "none": [],
+                        "impact": "moderate",
+                        "html": "<h1 data-sourcepos=\"5:1-5:13\">\n<span id=\"promiseall\" class=\"fragment\"></span><a href=\"#promiseall\"><i class=\"fa fa-link\"></i></a>Promise.all</h1>",
+                        "target": [
+                            "h1[data-sourcepos=\"5:1-5:13\"]"
+                        ],
+                        "failureSummary": "Fix any of the following:\n  Some page content is not contained by landmarks"
+                    },
+                    {
+                        "any": [
+                            {
+                                "id": "region",
+                                "data": {
+                                    "isIframe": false
+                                },
+                                "relatedNodes": [],
+                                "impact": "moderate",
+                                "message": "Some page content is not contained by landmarks"
+                            }
+                        ],
+                        "all": [],
+                        "none": [],
+                        "impact": "moderate",
+                        "html": "<p data-sourcepos=\"6:1-6:148\"><code>Promise.all</code>は、引数に非同期関数(Promise)の配列をとって、それぞれを同時に実行してその結果を返すものです。</p>",
+                        "target": [
+                            "p[data-sourcepos=\"6:1-6:148\"]"
+                        ],
+                        "failureSummary": "Fix any of the following:\n  Some page content is not contained by landmarks"
+                    },
+                    {
+                        "any": [
+                            {
+                                "id": "region",
+                                "data": {
+                                    "isIframe": false
+                                },
+                                "relatedNodes": [],
+                                "impact": "moderate",
+                                "message": "Some page content is not contained by landmarks"
+                            }
+                        ],
+                        "all": [],
+                        "none": [],
+                        "impact": "moderate",
+                        "html": "<div class=\"code-lang\"><span class=\"bold\">promiseAll.js</span></div>",
+                        "target": [
+                            "div[data-sourcepos=\"8:1-21:3\"] > .code-lang"
+                        ],
+                        "failureSummary": "Fix any of the following:\n  Some page content is not contained by landmarks"
+                    },
+                    {
+                        "any": [
+                            {
+                                "id": "region",
+                                "data": {
+                                    "isIframe": false
+                                },
+                                "relatedNodes": [],
+                                "impact": "moderate",
+                                "message": "Some page content is not contained by landmarks"
+                            }
+                        ],
+                        "all": [],
+                        "none": [],
+                        "impact": "moderate",
+                        "html": "<div class=\"highlight\">",
+                        "target": [
+                            "div[data-sourcepos=\"8:1-21:3\"] > .highlight"
+                        ],
+                        "failureSummary": "Fix any of the following:\n  Some page content is not contained by landmarks"
+                    },
+                    {
+                        "any": [
+                            {
+                                "id": "region",
+                                "data": {
+                                    "isIframe": false
+                                },
+                                "relatedNodes": [],
+                                "impact": "moderate",
+                                "message": "Some page content is not contained by landmarks"
+                            }
+                        ],
+                        "all": [],
+                        "none": [],
+                        "impact": "moderate",
+                        "html": "<p data-sourcepos=\"22:1-23:57\"><code>timeout</code>は指定された時間の待機時間を挟んでコンソールログを出力し、入力した時間を返すだけの非同期関数です。<br>\nこいつを実行すると、こんなのが返ります</p>",
+                        "target": [
+                            "p[data-sourcepos=\"22:1-23:57\"]"
+                        ],
+                        "failureSummary": "Fix any of the following:\n  Some page content is not contained by landmarks"
+                    },
+                    {
+                        "any": [
+                            {
+                                "id": "region",
+                                "data": {
+                                    "isIframe": false
+                                },
+                                "relatedNodes": [],
+                                "impact": "moderate",
+                                "message": "Some page content is not contained by landmarks"
+                            }
+                        ],
+                        "all": [],
+                        "none": [],
+                        "impact": "moderate",
+                        "html": "<div class=\"highlight\"><pre><code># node promiseAll.js \n500 start\n300 start\n100 start\n100 end\n300 end\n500 end\n[ 500, 300, 100 ]\n</code></pre></div>",
+                        "target": [
+                            "div[data-sourcepos=\"25:1-34:3\"] > .highlight"
+                        ],
+                        "failureSummary": "Fix any of the following:\n  Some page content is not contained by landmarks"
+                    },
+                    {
+                        "any": [
+                            {
+                                "id": "region",
+                                "data": {
+                                    "isIframe": false
+                                },
+                                "relatedNodes": [],
+                                "impact": "moderate",
+                                "message": "Some page content is not contained by landmarks"
+                            }
+                        ],
+                        "all": [],
+                        "none": [],
+                        "impact": "moderate",
+                        "html": "<p data-sourcepos=\"35:1-35:229\"><code>Promise.all</code>を使うと、登録されたすべての処理が完了してから、それぞれの結果を配列で取得することができます。また、登録された処理がそれぞれ同時に走っています。</p>",
+                        "target": [
+                            "p[data-sourcepos=\"35:1-35:229\"]"
+                        ],
+                        "failureSummary": "Fix any of the following:\n  Some page content is not contained by landmarks"
+                    },
+                    {
+                        "any": [
+                            {
+                                "id": "region",
+                                "data": {
+                                    "isIframe": false
+                                },
+                                "relatedNodes": [],
+                                "impact": "moderate",
+                                "message": "Some page content is not contained by landmarks"
+                            }
+                        ],
+                        "all": [],
+                        "none": [],
+                        "impact": "moderate",
+                        "html": "<h1 data-sourcepos=\"37:1-37:70\">",
+                        "target": [
+                            "h1[data-sourcepos=\"37:1-37:70\"]"
+                        ],
+                        "failureSummary": "Fix any of the following:\n  Some page content is not contained by landmarks"
+                    },
+                    {
+                        "any": [
+                            {
+                                "id": "region",
+                                "data": {
+                                    "isIframe": false
+                                },
+                                "relatedNodes": [],
+                                "impact": "moderate",
+                                "message": "Some page content is not contained by landmarks"
+                            }
+                        ],
+                        "all": [],
+                        "none": [],
+                        "impact": "moderate",
+                        "html": "<p data-sourcepos=\"38:1-39:45\">複数の非同期処理の結果を使いたい場合、Promise.allがパフォーマンスの向上に役に立ちます。<br>\n例えば以下の処理を見てみます。</p>",
+                        "target": [
+                            "p[data-sourcepos=\"38:1-39:45\"]"
+                        ],
+                        "failureSummary": "Fix any of the following:\n  Some page content is not contained by landmarks"
+                    },
+                    {
+                        "any": [
+                            {
+                                "id": "region",
+                                "data": {
+                                    "isIframe": false
+                                },
+                                "relatedNodes": [],
+                                "impact": "moderate",
+                                "message": "Some page content is not contained by landmarks"
+                            }
+                        ],
+                        "all": [],
+                        "none": [],
+                        "impact": "moderate",
+                        "html": "<div class=\"code-lang\"><span class=\"bold\">async_res.js</span></div>",
+                        "target": [
+                            "div[data-sourcepos=\"41:1-58:3\"] > .code-lang"
+                        ],
+                        "failureSummary": "Fix any of the following:\n  Some page content is not contained by landmarks"
+                    },
+                    {
+                        "any": [
+                            {
+                                "id": "region",
+                                "data": {
+                                    "isIframe": false
+                                },
+                                "relatedNodes": [],
+                                "impact": "moderate",
+                                "message": "Some page content is not contained by landmarks"
+                            }
+                        ],
+                        "all": [],
+                        "none": [],
+                        "impact": "moderate",
+                        "html": "<div class=\"highlight\">",
+                        "target": [
+                            "div[data-sourcepos=\"41:1-58:3\"] > .highlight"
+                        ],
+                        "failureSummary": "Fix any of the following:\n  Some page content is not contained by landmarks"
+                    },
+                    {
+                        "any": [
+                            {
+                                "id": "region",
+                                "data": {
+                                    "isIframe": false
+                                },
+                                "relatedNodes": [],
+                                "impact": "moderate",
+                                "message": "Some page content is not contained by landmarks"
+                            }
+                        ],
+                        "all": [],
+                        "none": [],
+                        "impact": "moderate",
+                        "html": "<p data-sourcepos=\"59:1-59:114\">各非同期処理の結果を変数に格納しているわけですが、この結果は以下の通りです。</p>",
+                        "target": [
+                            "p[data-sourcepos=\"59:1-59:114\"]"
+                        ],
+                        "failureSummary": "Fix any of the following:\n  Some page content is not contained by landmarks"
+                    },
+                    {
+                        "any": [
+                            {
+                                "id": "region",
+                                "data": {
+                                    "isIframe": false
+                                },
+                                "relatedNodes": [],
+                                "impact": "moderate",
+                                "message": "Some page content is not contained by landmarks"
+                            }
+                        ],
+                        "all": [],
+                        "none": [],
+                        "impact": "moderate",
+                        "html": "<div class=\"highlight\"><pre><code># node async_res.js \n500 start\n500 end\n300 start\n300 end\n100 start\n100 end\n[ 500, 300, 100 ]\n</code></pre></div>",
+                        "target": [
+                            "div[data-sourcepos=\"61:1-70:3\"] > .highlight"
+                        ],
+                        "failureSummary": "Fix any of the following:\n  Some page content is not contained by landmarks"
+                    },
+                    {
+                        "any": [
+                            {
+                                "id": "region",
+                                "data": {
+                                    "isIframe": false
+                                },
+                                "relatedNodes": [],
+                                "impact": "moderate",
+                                "message": "Some page content is not contained by landmarks"
+                            }
+                        ],
+                        "all": [],
+                        "none": [],
+                        "impact": "moderate",
+                        "html": "<p data-sourcepos=\"71:1-72:117\">各非同期処理が終わらないと次の処理に移っていないことがわかります。<br>\nせっかくの非同期処理ですが、これでは最終結果が出るまで余計に時間がかかります。</p>",
+                        "target": [
+                            "p[data-sourcepos=\"71:1-72:117\"]"
+                        ],
+                        "failureSummary": "Fix any of the following:\n  Some page content is not contained by landmarks"
+                    },
+                    {
+                        "any": [
+                            {
+                                "id": "region",
+                                "data": {
+                                    "isIframe": false
+                                },
+                                "relatedNodes": [],
+                                "impact": "moderate",
+                                "message": "Some page content is not contained by landmarks"
+                            }
+                        ],
+                        "all": [],
+                        "none": [],
+                        "impact": "moderate",
+                        "html": "<p data-sourcepos=\"74:1-74:44\">こんな時にPromise.allを使います。</p>",
+                        "target": [
+                            "p[data-sourcepos=\"74:1-74:44\"]"
+                        ],
+                        "failureSummary": "Fix any of the following:\n  Some page content is not contained by landmarks"
+                    },
+                    {
+                        "any": [
+                            {
+                                "id": "region",
+                                "data": {
+                                    "isIframe": false
+                                },
+                                "relatedNodes": [],
+                                "impact": "moderate",
+                                "message": "Some page content is not contained by landmarks"
+                            }
+                        ],
+                        "all": [],
+                        "none": [],
+                        "impact": "moderate",
+                        "html": "<div class=\"code-lang\"><span class=\"bold\">timeout_all.js</span></div>",
+                        "target": [
+                            "div[data-sourcepos=\"76:1-97:3\"] > .code-lang"
+                        ],
+                        "failureSummary": "Fix any of the following:\n  Some page content is not contained by landmarks"
+                    },
+                    {
+                        "any": [
+                            {
+                                "id": "region",
+                                "data": {
+                                    "isIframe": false
+                                },
+                                "relatedNodes": [],
+                                "impact": "moderate",
+                                "message": "Some page content is not contained by landmarks"
+                            }
+                        ],
+                        "all": [],
+                        "none": [],
+                        "impact": "moderate",
+                        "html": "<div class=\"highlight\">",
+                        "target": [
+                            "div[data-sourcepos=\"76:1-97:3\"] > .highlight"
+                        ],
+                        "failureSummary": "Fix any of the following:\n  Some page content is not contained by landmarks"
+                    },
+                    {
+                        "any": [
+                            {
+                                "id": "region",
+                                "data": {
+                                    "isIframe": false
+                                },
+                                "relatedNodes": [],
+                                "impact": "moderate",
+                                "message": "Some page content is not contained by landmarks"
+                            }
+                        ],
+                        "all": [],
+                        "none": [],
+                        "impact": "moderate",
+                        "html": "<p data-sourcepos=\"98:1-98:27\">こいつを実行すると</p>",
+                        "target": [
+                            "p[data-sourcepos=\"98:1-98:27\"]"
+                        ],
+                        "failureSummary": "Fix any of the following:\n  Some page content is not contained by landmarks"
+                    },
+                    {
+                        "any": [
+                            {
+                                "id": "region",
+                                "data": {
+                                    "isIframe": false
+                                },
+                                "relatedNodes": [],
+                                "impact": "moderate",
+                                "message": "Some page content is not contained by landmarks"
+                            }
+                        ],
+                        "all": [],
+                        "none": [],
+                        "impact": "moderate",
+                        "html": "<div class=\"highlight\"><pre><code># node timeout_all.js \nall start\n500 start\n300 start\n100 start\n100 end\n300 end\n500 end\n[ 500, 300, 100 ]\nall end\n</code></pre></div>",
+                        "target": [
+                            "div[data-sourcepos=\"100:1-111:3\"] > .highlight"
+                        ],
+                        "failureSummary": "Fix any of the following:\n  Some page content is not contained by landmarks"
+                    },
+                    {
+                        "any": [
+                            {
+                                "id": "region",
+                                "data": {
+                                    "isIframe": false
+                                },
+                                "relatedNodes": [],
+                                "impact": "moderate",
+                                "message": "Some page content is not contained by landmarks"
+                            }
+                        ],
+                        "all": [],
+                        "none": [],
+                        "impact": "moderate",
+                        "html": "<p data-sourcepos=\"112:1-113:104\">3つの非同期処理が全部同時に実行され、その結果がa, b, cに分割代入されている感じですね。<br>\n通信などの非同期処理が複数ある場合は、Promise.all使っちゃうのが楽ですね。</p>",
+                        "target": [
+                            "p[data-sourcepos=\"112:1-113:104\"]"
+                        ],
+                        "failureSummary": "Fix any of the following:\n  Some page content is not contained by landmarks"
+                    },
+                    {
+                        "any": [
+                            {
+                                "id": "region",
+                                "data": {
+                                    "isIframe": false
+                                },
+                                "relatedNodes": [],
+                                "impact": "moderate",
+                                "message": "Some page content is not contained by landmarks"
+                            }
+                        ],
+                        "all": [],
+                        "none": [],
+                        "impact": "moderate",
+                        "html": "<h1 data-sourcepos=\"115:1-115:11\">\n<span id=\"まとめ\" class=\"fragment\"></span><a href=\"#%E3%81%BE%E3%81%A8%E3%82%81\"><i class=\"fa fa-link\"></i></a>まとめ</h1>",
+                        "target": [
+                            "h1[data-sourcepos=\"115:1-115:11\"]"
+                        ],
+                        "failureSummary": "Fix any of the following:\n  Some page content is not contained by landmarks"
+                    },
+                    {
+                        "any": [
+                            {
+                                "id": "region",
+                                "data": {
+                                    "isIframe": false
+                                },
+                                "relatedNodes": [],
+                                "impact": "moderate",
+                                "message": "Some page content is not contained by landmarks"
+                            }
+                        ],
+                        "all": [],
+                        "none": [],
+                        "impact": "moderate",
+                        "html": "<p data-sourcepos=\"116:1-118:45\">Promise.allの挙動を復習してみました。<br>\nいや、PHPばかり触っていたので、JSの非同期処理の流れとか、忘れちゃうんですよね。<br>\n今回は軽めにこんなところです。</p>",
+                        "target": [
+                            "p[data-sourcepos=\"116:1-118:45\"]"
+                        ],
+                        "failureSummary": "Fix any of the following:\n  Some page content is not contained by landmarks"
+                    },
+                    {
+                        "any": [
+                            {
+                                "id": "region",
+                                "data": {
+                                    "isIframe": false
+                                },
+                                "relatedNodes": [],
+                                "impact": "moderate",
+                                "message": "Some page content is not contained by landmarks"
+                            }
+                        ],
+                        "all": [],
+                        "none": [],
+                        "impact": "moderate",
+                        "html": "<a aria-label=\"はてなブックマーク\" class=\"style-s47yiq\" href=\"https://b.hatena.ne.jp/entry/s/qiita.com/niisan-tokyo/items/4ec961ee3f163b2dc4e7\" rel=\"noopener noreferrer\" target=\"_blank\" title=\"はてなブックマーク\">",
+                        "target": [
+                            ".style-s47yiq[aria-label=\"はてなブックマーク\"][title=\"はてなブックマーク\"]"
+                        ],
+                        "failureSummary": "Fix any of the following:\n  Some page content is not contained by landmarks"
+                    },
+                    {
+                        "any": [
+                            {
+                                "id": "region",
+                                "data": {
+                                    "isIframe": false
+                                },
+                                "relatedNodes": [],
+                                "impact": "moderate",
+                                "message": "Some page content is not contained by landmarks"
+                            }
+                        ],
+                        "all": [],
+                        "none": [],
+                        "impact": "moderate",
+                        "html": "<div class=\"style-qidqy3\">",
+                        "target": [
+                            ".style-qidqy3"
+                        ],
+                        "failureSummary": "Fix any of the following:\n  Some page content is not contained by landmarks"
+                    },
+                    {
+                        "any": [
+                            {
+                                "id": "region",
+                                "data": {
+                                    "isIframe": false
+                                },
+                                "relatedNodes": [],
+                                "impact": "moderate",
+                                "message": "Some page content is not contained by landmarks"
+                            }
+                        ],
+                        "all": [],
+                        "none": [],
+                        "impact": "moderate",
+                        "html": "<a id=\"aw0\" target=\"_blank\" href=\"https://googleads.g.doubleclick.net/pcs/click?xai=AKAOjsvhrlnTeA-zHZL_YHpmxCyrrDvphpa8vTLRd9ESa3qaGYq-2Q2Fj0fxiesFH8OP6Hv_A0EUClciO7A6OzkBFDBSEUiivnoP3gXHRvgEvEuxqAUntI_HgU1z0fmPqPhTM5--vkqzGfvM0OTVrRPti2iFCwVFRMiZRNcIed3lEWnDFtIEDVoBy9bTBxluRLNA1rnUl1QF-Y7WjbcMkMQEhxewo68ZfJlISCi-sRx1J-jYl4nd4T-HW-TNo2MvMg3VLWW473uKgBodpHdT0ZjEn_9wYErXwZDbWK36JDZwocbZ_pquGwwpJFYeGDocbqVyW3ykGw-sd2CbfjeEsaQWOUZl_mKXKjrUJGGc3x5Z8f9BSHLfU73YaP5QdazWqhC09XyEnrswsWK7GCG4vbBBYbr4_CYIq_RBFSFf&amp;sai=AMfl-YTmzeG3-ViD3XI7zYn-xtWJbF7uMqPk4sYFHHmBYPZemUt6FZupFY6hsj5aRe0EXrXnzZXX7LunTI3W8hx0C_PeNKF18R3qy7YOnA&amp;sig=Cg0ArKJSzFP6c91GjdNd&amp;fbs_aeid=%5Bgw_fbsaeid%5D&amp;adurl=https://zine.qiita.com/event/202401-pingcap/%3Futm_source%3Dqiita%26utm_medium%3Dbanner\" onfocus=\"ss('aw0')\" onmousedown=\"st('aw0')\" onmouseover=\"ss('aw0')\" onclick=\"ha('aw0')\">",
+                        "target": [
+                            "#google_ads_iframe_\\/383564218\\/qiita\\.com_items-show_under-article-mobile_0",
+                            "#aw0"
+                        ],
+                        "failureSummary": "Fix any of the following:\n  Some page content is not contained by landmarks"
+                    },
+                    {
+                        "any": [
+                            {
+                                "id": "region",
+                                "data": {
+                                    "isIframe": false
+                                },
+                                "relatedNodes": [],
+                                "impact": "moderate",
+                                "message": "Some page content is not contained by landmarks"
+                            }
+                        ],
+                        "all": [],
+                        "none": [],
+                        "impact": "moderate",
+                        "html": "<div class=\"style-nxr1bw\">",
+                        "target": [
+                            ".style-nxr1bw:nth-child(2)"
+                        ],
+                        "failureSummary": "Fix any of the following:\n  Some page content is not contained by landmarks"
+                    },
+                    {
+                        "any": [
+                            {
+                                "id": "region",
+                                "data": {
+                                    "isIframe": false
+                                },
+                                "relatedNodes": [],
+                                "impact": "moderate",
+                                "message": "Some page content is not contained by landmarks"
+                            }
+                        ],
+                        "all": [],
+                        "none": [],
+                        "impact": "moderate",
+                        "html": "<a id=\"aw0\" target=\"_blank\" href=\"https://googleads.g.doubleclick.net/pcs/click?xai=AKAOjstKsgOCCPBEsuVynz2_UkpZ3MQR9rZm4ivmdcFe7gFNV_ZUV0LQwfmpYssMC6_l0JPIkBr7iXA6RqWVZwUpigAW6rdbw3zvaAnzQ3k9ZUf0v9gxepRmTs6ystbdrPummAI2NcYf5__mdvEiTCLo2PBO8FibNkO6MJQ8voJ0fj8utnXyGRT2KlN-BlXFYV2Xp3nHWT5sF_gG5uTcjmKITsMwEq3zmI0c5-y0sVTOuel3-oJLKDH1PxUJ8rVHeeDR27OYN7mawi0pje5zDWTZsUsa3VdEcE2NUPI5XZgOWBxmO_QCf7FwYPu8ZrT0n3fbR0Li3AMHfduxDUin0xXFritw8tSfdyGnnqvKyKBbZ7Vkh2MtahSXVr0zoQVxEjsqdD-ikeRdVk7ZNz6Ptm9-EhaWLa-k2yQWDMKimmw&amp;sai=AMfl-YRKIFC-1yG7Dfo2Hh6Ck7UP28HII6DTddsnELGzPqFOeukHLkZZotqtJcjoZLoiitoisNlw-nl96glVSzvvpAvzV43_qVfYO2gRwg&amp;sig=Cg0ArKJSzNdhUAV7Fx8H&amp;fbs_aeid=%5Bgw_fbsaeid%5D&amp;adurl=https://zine.qiita.com/event/202402-pingcap-02/%3Futm_source%3Dqiita%26utm_medium%3Dbanner\" onfocus=\"ss('aw0')\" onmousedown=\"st('aw0')\" onmouseover=\"ss('aw0')\" onclick=\"ha('aw0')\">",
+                        "target": [
+                            "#google_ads_iframe_\\/383564218\\/qiita\\.com_items-show_under-article-mobile_2_0",
+                            "#aw0"
+                        ],
+                        "failureSummary": "Fix any of the following:\n  Some page content is not contained by landmarks"
+                    },
+                    {
+                        "any": [
+                            {
+                                "id": "region",
+                                "data": {
+                                    "isIframe": false
+                                },
+                                "relatedNodes": [],
+                                "impact": "moderate",
+                                "message": "Some page content is not contained by landmarks"
+                            }
+                        ],
+                        "all": [],
+                        "none": [],
+                        "impact": "moderate",
+                        "html": "<div class=\"style-nxr1bw\" style=\"\">",
+                        "target": [
+                            ".style-nxr1bw:nth-child(4)"
+                        ],
+                        "failureSummary": "Fix any of the following:\n  Some page content is not contained by landmarks"
+                    },
+                    {
+                        "any": [
+                            {
+                                "id": "region",
+                                "data": {
+                                    "isIframe": false
+                                },
+                                "relatedNodes": [],
+                                "impact": "moderate",
+                                "message": "Some page content is not contained by landmarks"
+                            }
+                        ],
+                        "all": [],
+                        "none": [],
+                        "impact": "moderate",
+                        "html": "<div class=\"style-itrjxe\">",
+                        "target": [
+                            ".style-itrjxe:nth-child(5)"
+                        ],
+                        "failureSummary": "Fix any of the following:\n  Some page content is not contained by landmarks"
+                    }
+                ]
+            }
+        ]
+    }
+]
